@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reproductor", "Reproductor\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ocr", "Ocr\Ocr.csproj", "{9AC053E9-FAD0-4497-B18A-8106FF0142AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RpaService", "RpaService\RpaService.csproj", "{3DBCB506-3075-45E4-A30E-7E0A596B1705}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{9AC053E9-FAD0-4497-B18A-8106FF0142AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9AC053E9-FAD0-4497-B18A-8106FF0142AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9AC053E9-FAD0-4497-B18A-8106FF0142AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DBCB506-3075-45E4-A30E-7E0A596B1705}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DBCB506-3075-45E4-A30E-7E0A596B1705}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DBCB506-3075-45E4-A30E-7E0A596B1705}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DBCB506-3075-45E4-A30E-7E0A596B1705}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

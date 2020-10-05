@@ -27,8 +27,7 @@ namespace Studio.Commands
 
         public void Execute(object parameter)
         {
-            viewModel.AddViewModelMacro = new ObservableCollection<MacroUCViewModel>();
-            MyTabItem tab = new MyTabItem(new ItemsControl(), new Grid(), new ScrollViewer(), viewModel.AddViewModelMacro);
+            MyTabItem tab = new MyTabItem(new ItemsControl(), new Grid(), new ScrollViewer(),new ObservableCollection<MacroUCViewModel>());
             viewModel.NewTabItem.Add(tab);
         }
     }

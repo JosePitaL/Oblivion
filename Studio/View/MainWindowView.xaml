@@ -34,7 +34,7 @@
                 <ToolBarTray Grid.Column="0">
                     <ToolBar>
                         <Button FontFamily="Segoe MDL2 Assets" FontSize="30" Content="&#xE81E;" Command="{Binding AddTabItemCommand}"/>
-                        <Button FontFamily="Segoe MDL2 Assets" FontSize="30" Content="&#xF407;" Command="{Binding AddMacroCommand}"/>
+                        <Button FontFamily="Segoe MDL2 Assets" FontSize="30" Content="&#xF407;" Command="{Binding AddMacroCommand}" CommandParameter="{Binding SelectedItem}"/>
                         <Button FontFamily="Segoe MDL2 Assets" FontSize="30" Content="&#xEB7E;" />
                         <Button FontFamily="Segoe MDL2 Assets" FontSize="30" Content="&#xEF90;" />
                     </ToolBar>

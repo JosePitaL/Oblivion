@@ -9,13 +9,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simulador", "Simulador\Simu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogP", "LogP\LogP.csproj", "{F0ACF9D2-2C47-47DB-81DF-05FCDDA92C8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Procesator", "Procesator\Procesator.csproj", "{74D06209-61DF-4A72-8DE5-DCF8308619F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Procesator", "Procesator\Procesator.csproj", "{74D06209-61DF-4A72-8DE5-DCF8308619F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reproductor", "Reproductor\Reproductor.csproj", "{2FBAAAF6-2599-47F0-9073-D4B356238D86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reproductor", "Reproductor\Reproductor.csproj", "{2FBAAAF6-2599-47F0-9073-D4B356238D86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ocr", "Ocr\Ocr.csproj", "{9AC053E9-FAD0-4497-B18A-8106FF0142AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ocr", "Ocr\Ocr.csproj", "{9AC053E9-FAD0-4497-B18A-8106FF0142AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RpaService", "RpaService\RpaService.csproj", "{3DBCB506-3075-45E4-A30E-7E0A596B1705}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RpaService", "RpaService\RpaService.csproj", "{3DBCB506-3075-45E4-A30E-7E0A596B1705}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Studio", "Studio\Studio.csproj", "{EF0C8E7B-13B7-434C-ABB7-A5585CB8FC35}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{3DBCB506-3075-45E4-A30E-7E0A596B1705}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DBCB506-3075-45E4-A30E-7E0A596B1705}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DBCB506-3075-45E4-A30E-7E0A596B1705}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF0C8E7B-13B7-434C-ABB7-A5585CB8FC35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF0C8E7B-13B7-434C-ABB7-A5585CB8FC35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF0C8E7B-13B7-434C-ABB7-A5585CB8FC35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF0C8E7B-13B7-434C-ABB7-A5585CB8FC35}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

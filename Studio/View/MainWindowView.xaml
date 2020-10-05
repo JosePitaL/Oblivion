@@ -1,0 +1,148 @@
+﻿<Window x:Class="Studio.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Studio.View"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="1080" Width="1920" WindowState="Maximized">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid  Grid.Row="0">
+            <DockPanel>
+                <Menu DockPanel.Dock="Top">
+                    <MenuItem Header="Archivo">
+                        <MenuItem Header="Nuevo"/>
+                        <MenuItem Header="Abrir"/>
+                        <MenuItem Header="Guardar"/>
+                        <Separator/>
+                        <MenuItem Header="Salir"/>
+                    </MenuItem>
+                </Menu>
+            </DockPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <ToolBarTray Grid.Column="0">
+                    <ToolBar>
+                        <Button FontFamily="Segoe MDL2 Assets" FontSize="30" Content="&#xE81E;" Command="{Binding AddTabItemCommand}"/>
+                        <Button FontFamily="Segoe MDL2 Assets" FontSize="30" Content="&#xF407;" Command="{Binding AddMacroCommand}"/>
+                        <Button FontFamily="Segoe MDL2 Assets" FontSize="30" Content="&#xEB7E;" />
+                        <Button FontFamily="Segoe MDL2 Assets" FontSize="30" Content="&#xEF90;" />
+                    </ToolBar>
+                </ToolBarTray>
+                <ToolBarTray Grid.Column="1">
+                    <ToolBar>
+                        <Button FontFamily="Segoe MDL2 Assets" FontSize="30" Content="&#xE002;" />
+                        <Button Name="play" FontFamily="Segoe MDL2 Assets" FontSize="30" Content="&#xF5B0;"/>
+                        <Button FontFamily="Segoe MDL2 Assets" FontSize="30" Content="&#xEDB4;" />
+                    </ToolBar>
+                </ToolBarTray>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <TextBox Text="Buscar" Grid.Column="0" />
+                        <Button Grid.Column="1" FontFamily="Segoe MDL2 Assets" FontSize="12" Content="&#xE721;" BorderThickness="0" Background="Transparent"/>
+                    </Grid>
+                    <Separator Grid.Row="1" />
+                    <Grid Grid.Row="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Button Content="Buscar Imagen" Grid.Row="0" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="BuscarImagen"/>
+                        <Button Content="Buscar/Mover Imagen" Grid.Row="1" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="BuscarMoverImagen"/>
+                        <Button Content="Buscar/Clickar Imagen" Grid.Row="2" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="ImagenClick"/>
+                        <Button Content="Mover Ratón" Grid.Row="3" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="MoverRaton"/>
+                        <Button Content="Clickar Ratón" Grid.Row="4" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="ClickarRaton"/>
+                        <Button Content="Copiar" Grid.Row="5" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent"/>
+                        <Button Content="Pegar" Grid.Row="6" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent"/>
+                        <Button Content="Escribir" Grid.Row="7" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="Escribir"/>
+                        <Button Content="Guardar Hash" Grid.Row="8" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="GuardarHash"/>
+                        <Button Content="Leer Hash" Grid.Row="9" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="LeerHash"/>
+                        <Button Content="Crear Lista" Grid.Row="10" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="CrearLista"/>
+                        <Button Content="Añadir a una Lista" Grid.Row="11" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="AñadirenLista" />
+                        <Button Content="Buscar en una Lista" Grid.Row="12" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="BuscarenLista"/>
+                        <Button Content="Eliminar Lista" Grid.Row="13" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="EliminarenLista" />
+                        <Button Content="Pulsar" Grid.Row="14" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent"/>
+                        <Button Content="Reemplazar" Grid.Row="15" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent"/>
+                        <Button Content="Evaluar" Grid.Row="16" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent"/>
+                        <Button Content="Ocr" Grid.Row="17" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent"/>
+                        <Button Content="Función" Grid.Row="18" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent"/>
+                        <Button Content="Proceso" Grid.Row="19" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent"/>
+                        <Button Content="Bucle" Grid.Row="20" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent"/>
+                        <Button Content="Error" Grid.Row="21" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent"/>
+                        <Button Content="Pausa" Grid.Row="22" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <TabControl Grid.Row="0" ItemsSource="{Binding NewTabItem}" SelectedIndex="{Binding SelectedItem}" />
+
+
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label Content="Propiedades" Grid.Row="0" />
+                    <Separator Grid.Row="1" />
+                    <Grid Grid.Row="2">
+                        <ContentControl Content="{Binding SelectedViewModel}" />
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

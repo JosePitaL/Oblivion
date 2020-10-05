@@ -1,0 +1,50 @@
+﻿<Application x:Class="Studio.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Studio"
+             xmlns:views="clr-namespace:Studio.View"
+             xmlns:viewmodels="clr-namespace:Studio.ViewModel"
+             StartupUri ="\View\MainWindowView.xaml">
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type viewmodels:BuscarImagenUCViewModel}">
+            <views:BuscarImagenUCView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:BuscarMoverImagenUCViewModel}">
+            <views:BuscarMoverImagenUCView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:ImagenClickUCViewModel}">
+            <views:ImagenClickUCView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:MoverRatonUCViewModel}">
+            <views:MoverRatonUCView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:ClickarRatonUCModel}">
+            <views:ClickarRatonView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:EscribirUCViewModel}">
+            <views:EscribirUCView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:GuardarHashUCViewModel}">
+            <views:GuardarHashUCView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:LeerHashUCViewModel}">
+            <views:LeerHashUCView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:CrearListaUCViewModel}">
+            <views:CrearListaUCView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:BuscarValorListaUCViewModel}">
+            <views:BuscarValorListaUCView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:AnadirValorListaUCViewModel}">
+            <views:AnadirValorListaUCView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:EliminarValorLitaUCViewModel}">
+            <views:EliminarValorLitaUCView />
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewmodels:MacroUCViewModel}">
+            <views:MacroUCView />
+        </DataTemplate>
+    </Application.Resources>
+</Application>

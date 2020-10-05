@@ -49,18 +49,6 @@ namespace Studio.ViewModel
             }
         }
 
-        private ObservableCollection<MacroUCViewModel> _addViewmodelMacro;
-        public ObservableCollection<MacroUCViewModel> AddViewModelMacro
-        {
-            get { return _addViewmodelMacro; }
-            set 
-            { 
-                _addViewmodelMacro = value;
-                OnPropertyChanged(nameof(AddViewModelMacro));
-            }
-        }
-
-
         public MainWindowViewModel()
         { 
             UpdateViewModelCommand = new UpdateViewModelCommand(this);

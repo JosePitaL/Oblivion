@@ -26,7 +26,12 @@ namespace Studio.Commands
 
         public void Execute(object parameter)
         {
-            viewmodel.AddViewModelMacro.Add(new MacroUCViewModel());
+            if(parameter != null)
+            {
+                int p = int.Parse(parameter.ToString());
+                viewmodel.NewTabItem[p].macroUCViewModels.Add(new MacroUCViewModel());
+            }
+            
         }
     }
 }

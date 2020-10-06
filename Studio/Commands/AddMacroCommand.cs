@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Windows.Forms;
 using System.Windows.Input;
 
 namespace Studio.Commands
@@ -28,8 +29,16 @@ namespace Studio.Commands
         {
             if(parameter != null)
             {
-                int p = int.Parse(parameter.ToString());
-                viewmodel.NewTabItem[p].macroUCViewModels.Add(new MacroUCViewModel());
+                try
+                {
+                    int p = int.Parse(parameter.ToString());
+                    viewmodel.NewTabItem[p].macroUCViewModels.Add(new MacroUCViewModel());
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("No hay ninguna pestaña de lote creada");
+                }
+                
             }
             
         }

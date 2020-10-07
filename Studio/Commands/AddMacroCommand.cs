@@ -15,9 +15,7 @@ namespace Studio.Commands
 
         public AddMacroCommand(MainWindowViewModel viewmodel)
         {
-            this.viewmodel = viewmodel;
-            
-            
+            this.viewmodel = viewmodel;   
         }
 
         public bool CanExecute(object parameter)
@@ -32,7 +30,7 @@ namespace Studio.Commands
                 try
                 {
                     int p = int.Parse(parameter.ToString());
-                    viewmodel.NewTabItem[p].macroUCViewModels.Add(new MacroUCViewModel());
+                    viewmodel.NewTabItem[p].macroUCViewModels.Add(new MacroUCViewModel(viewmodel));
                 }
                 catch (Exception)
                 {

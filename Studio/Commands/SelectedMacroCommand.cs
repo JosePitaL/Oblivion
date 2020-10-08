@@ -27,11 +27,6 @@ namespace Studio.Commands
             return true;
         }
 
-        public void Execute(ObservableCollection<MyTabItem> parameter)
-        {
-            
-        }
-
         public void Execute(object parameter)
         {
             if (macroUCViewModel.Borde == Brushes.Red)
@@ -47,8 +42,7 @@ namespace Studio.Commands
                         item1.Borde = Brushes.Black;
                     }
                 }
-                macroUCViewModel.Borde = Brushes.Red;
-                
+                macroUCViewModel.Borde = Brushes.Red;  
             }
         }
     }

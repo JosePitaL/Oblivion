@@ -127,8 +127,6 @@
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <TabControl Grid.Row="0" ItemsSource="{Binding NewTabItem}" SelectedIndex="{Binding SelectedItem}" />
-
-
                 </Grid>
                 <Grid Grid.Column="2">
                     <Grid.RowDefinitions>

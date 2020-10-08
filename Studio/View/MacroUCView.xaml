@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="100" d:DesignWidth="300">
     <Grid>
-        <Border Name="borde" Height="Auto" Width="300" BorderThickness="2" BorderBrush="{Binding Borde}" >
+        <Border Name="borde" Height="Auto" Width="300" BorderThickness="2" BorderBrush="{Binding Borde}" CornerRadius="5" >
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -17,15 +17,17 @@
                 <Grid Grid.Row="0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="14*" />
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Button Content="Macro1" Grid.Column="0" Background="Transparent" BorderThickness="0" Width="290" HorizontalContentAlignment="Left" Command="{Binding SelectedMacroCommand}" />
-                    <Button FontFamily="Segoe MDL2 Assets" Content="&#xE712;" Grid.Column="1" BorderThickness="0" Background="Transparent" Margin="0,0,5,0"/>
+                    <Button FontFamily="Segoe MDL2 Assets" Content="&#xE759;" Background="Transparent" BorderThickness="0" Grid.Column="0" Command="{Binding MoveMacroCommand}" />
+                    <Button Content="Macro1" Grid.Column="1" Background="Transparent" BorderThickness="0" Width="290" HorizontalContentAlignment="Left" Command="{Binding SelectedMacroCommand}" />
+                    <Button FontFamily="Segoe MDL2 Assets" Content="&#xE712;" Grid.Column="2" BorderThickness="0" Background="Transparent" Margin="0,0,5,0"/>
                 </Grid>
                 <Separator Grid.Row="1" />
                 <TabControl Grid.Row="2">
                     <TabItem Header="Acciones">
-                        <Grid x:Name="acciones" />
+                        <ItemsControl ItemsSource="{Binding accionForms}" />
                     </TabItem>
                     <TabItem Header="Camino">
                         <Grid>

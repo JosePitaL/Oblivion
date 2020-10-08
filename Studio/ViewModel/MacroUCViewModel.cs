@@ -1,6 +1,8 @@
 ﻿using Studio.Commands;
+using Studio.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -12,13 +14,17 @@ namespace Studio.ViewModel
     {
         
         public ICommand SelectedMacroCommand { get; set; }
+        public ICommand MoveMacroCommand { get; set; }
 
         private MainWindowViewModel _mainWindowViewModel;
-
         public MainWindowViewModel mainWindowViewModel
         {
             get { return _mainWindowViewModel; }
-            set { _mainWindowViewModel = value; }
+            set 
+            { 
+                _mainWindowViewModel = value;
+                OnPropertyChanged(nameof(mainWindowViewModel));
+            }
         }
 
         private Brush _borde;
@@ -32,13 +38,24 @@ namespace Studio.ViewModel
             }
         }
 
+        private ObservableCollection<AccionesUCViewModel> _accionForms;
+        public ObservableCollection<AccionesUCViewModel> accionForms
+        {
+            get { return _accionForms; }
+            set 
+            { 
+                _accionForms = value;
+                OnPropertyChanged(nameof(accionForms));
+            }
+        }
+
         public MacroUCViewModel(MainWindowViewModel mainWindowViewModel)
         {
+            accionForms = new ObservableCollection<AccionesUCViewModel>();
             this.mainWindowViewModel = mainWindowViewModel;
             Borde = Brushes.Black;
             SelectedMacroCommand = new SelectedMacroCommand(this);
+            MoveMacroCommand = new MoveMacroCommand(this);
         }
-
-
     }
 }

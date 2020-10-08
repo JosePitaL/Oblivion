@@ -1,8 +1,12 @@
-﻿using Studio.ViewModel;
+﻿using Studio.Model;
+using Studio.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace Studio.Commands
 {
@@ -62,9 +66,25 @@ namespace Studio.Commands
                 case "EliminarenLista":
                     viewModel.SelectedViewModel = new EliminarValorLitaUCViewModel();
                     break;
-
-
             }
+            foreach (var item in viewModel.NewTabItem)
+            {
+                foreach (var item1 in item.macroUCViewModels)
+                {
+                    if(item1.Borde == Brushes.Red)
+                    {
+                        item1.accionForms.Add(new AccionesUCViewModel(new ContentControl()
+                        {
+                            Content = parameter.ToString()
+                        }, ""));
+                    }
+                    else
+                    {
+                        MessageBox.Show("No hay ninguna macro seleccionada");
+                    }
+                }
+            }
+           
         }
     }
 }

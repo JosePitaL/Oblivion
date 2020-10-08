@@ -22,7 +22,6 @@ namespace Studio.Model
             this.scrollViewer = scrollViewer;
             this.macroUCViewModels = macroUCViewModels;
 
-            
             itemsControl.ItemsSource = macroUCViewModels;
             canvas.Children.Add(itemsControl);
             scrollViewer.Content = canvas;

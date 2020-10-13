@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 
 namespace Studio.Commands
@@ -27,7 +28,7 @@ namespace Studio.Commands
 
         public void Execute(object parameter)
         {
-            MyTabItem tab = new MyTabItem(new ItemsControl(), new Canvas(), new ScrollViewer(),new ObservableCollection<MacroUCViewModel>());
+            MyTabItem tab = new MyTabItem(new ItemsControl(), new Canvas(), new ScrollViewer(), new ObservableCollection<MacroUCViewModel>());
             viewModel.NewTabItem.Add(tab);
         }
     }

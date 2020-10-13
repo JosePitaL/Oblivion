@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -21,6 +22,18 @@ namespace Studio.View
         public MacroUCView()
         {
             InitializeComponent();
+        }
+
+        private void Thumb_DragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
+        {
+            var thumb = sender as Thumb;
+            var root = VisualTreeHelper.GetParent(thumb) as FrameworkElement;
+            var left = Canvas.GetLeft(root);
+            var top = Canvas.GetTop(root);
+            left += e.HorizontalChange;
+            top += e.VerticalChange;
+            Canvas.SetLeft(root, left);
+            Canvas.SetTop(root, top);
         }
     }
 }

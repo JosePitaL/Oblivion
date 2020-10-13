@@ -78,10 +78,6 @@ namespace Studio.Commands
                             Content = parameter.ToString()
                         }, ""));
                     }
-                    else
-                    {
-                        MessageBox.Show("No hay ninguna macro seleccionada");
-                    }
                 }
             }
            

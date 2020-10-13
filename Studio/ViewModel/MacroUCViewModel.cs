@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -14,7 +15,6 @@ namespace Studio.ViewModel
     {
         
         public ICommand SelectedMacroCommand { get; set; }
-        public ICommand MoveMacroCommand { get; set; }
 
         private MainWindowViewModel _mainWindowViewModel;
         public MainWindowViewModel mainWindowViewModel
@@ -54,8 +54,7 @@ namespace Studio.ViewModel
             accionForms = new ObservableCollection<AccionesUCViewModel>();
             this.mainWindowViewModel = mainWindowViewModel;
             Borde = Brushes.Black;
-            SelectedMacroCommand = new SelectedMacroCommand(this);
-            MoveMacroCommand = new MoveMacroCommand(this);
+            SelectedMacroCommand = new SelectedMacroCommand(this);  
         }
     }
 }

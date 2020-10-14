@@ -24,13 +24,18 @@ namespace Studio.Model
             this.scrollViewer = scrollViewer;
             this.macroUCViewModels = macroUCViewModels;
 
-            
-            
+            canvas.Width = double.MaxValue;
+            canvas.Height = double.MaxValue;
+            scrollViewer.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
+            scrollViewer.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;
+
+
 
             itemsControl.ItemsSource = macroUCViewModels;
             canvas.Children.Add(itemsControl);
             scrollViewer.Content = canvas;
             this.Content = scrollViewer;
+           
         }
         
     }  

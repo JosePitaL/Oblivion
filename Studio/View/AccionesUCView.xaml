@@ -11,7 +11,7 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
-        <Button Grid.Column="0" HorizontalAlignment="Left" Background="Transparent" BorderThickness="0" Content="{Binding AccionButton}" />
+        <Button Grid.Column="0" HorizontalAlignment="Left" Background="{Binding ActionSeleted}" BorderThickness="0" Content="{Binding AccionButton}" Command="{Binding SelectedActionCommand}" />
         <TextBox Grid.Column="1" HorizontalContentAlignment="Left" Height="25" Text="{Binding AccionTextBox}" />
     </Grid>
 </UserControl>

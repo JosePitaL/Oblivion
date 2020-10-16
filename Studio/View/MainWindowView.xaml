@@ -127,6 +127,8 @@
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <TabControl Grid.Row="0" ItemsSource="{Binding NewTabItem}" SelectedIndex="{Binding SelectedItem}" />
+                    <RichTextBox AcceptsReturn="True" AcceptsTab="True" Height="Auto" FontSize="12" Foreground="Green" Grid.Row="1" />
+                    
                 </Grid>
                 <Grid Grid.Column="2">
                     <Grid.RowDefinitions>

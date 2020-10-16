@@ -28,45 +28,6 @@ namespace Studio.Commands
 
         public void Execute(object parameter)
         {
-            switch (parameter.ToString())
-            {
-                case "BuscarImagen":
-                    viewModel.SelectedViewModel = new BuscarImagenUCViewModel();
-                    break;
-                case "BuscarMoverImagen":
-                    viewModel.SelectedViewModel = new BuscarMoverImagenUCViewModel();
-                    break;
-                case "ImagenClick":
-                    viewModel.SelectedViewModel = new ImagenClickUCViewModel();
-                    break;
-                case "MoverRaton":
-                    viewModel.SelectedViewModel = new MoverRatonUCViewModel();
-                    break;
-                case "ClickarRaton":
-                    viewModel.SelectedViewModel = new ClickarRatonUCModel();
-                    break;
-                case "Escribir":
-                    viewModel.SelectedViewModel = new EscribirUCViewModel();
-                    break;
-                case "GuardarHash":
-                    viewModel.SelectedViewModel = new GuardarHashUCViewModel();
-                    break;
-                case "LeerHash":
-                    viewModel.SelectedViewModel = new LeerHashUCViewModel();
-                    break;
-                case "CrearLista":
-                    viewModel.SelectedViewModel = new CrearListaUCViewModel();
-                    break;
-                case "BuscarenLista":
-                    viewModel.SelectedViewModel = new BuscarValorListaUCViewModel();
-                    break;
-                case "AñadirenLista":
-                    viewModel.SelectedViewModel = new AnadirValorListaUCViewModel();
-                    break;
-                case "EliminarenLista":
-                    viewModel.SelectedViewModel = new EliminarValorLitaUCViewModel();
-                    break;
-            }
             foreach (var item in viewModel.NewTabItem)
             {
                 foreach (var item1 in item.macroUCViewModels)
@@ -76,7 +37,7 @@ namespace Studio.Commands
                         item1.accionForms.Add(new AccionesUCViewModel(new ContentControl()
                         {
                             Content = parameter.ToString()
-                        }, ""));
+                        }, "", viewModel));
                     }
                 }
             }

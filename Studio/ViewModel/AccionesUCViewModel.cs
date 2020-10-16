@@ -45,14 +45,18 @@ namespace Studio.ViewModel
             }
         }
 
+        public MainWindowViewModel main { get; set; }
 
 
-        public AccionesUCViewModel(ContentControl AccionLabel, string AccionTextBox)
+
+
+        public AccionesUCViewModel(ContentControl AccionButton, string AccionTextBox, MainWindowViewModel main)
         {
             ActionSeleted = Brushes.Transparent;
-            this.AccionButton = AccionLabel;
+            this.main = main;
+            this.AccionButton = AccionButton;
             this.AccionTextBox = AccionTextBox;
-            SelectedActionCommand = new SelectedActionCommand(this);
+            SelectedActionCommand = new SelectedActionCommand(this, main);
         }
 
     }

@@ -34,6 +34,10 @@ namespace Studio.Commands
                 {
                     if(item1.Borde == Brushes.Red)
                     {
+                        if(item1.accionForms.Count > 3)
+                        {
+                            item1.MacroHeigth += 30;
+                        }
                         item1.accionForms.Add(new AccionesUCViewModel(new ContentControl()
                         {
                             Content = parameter.ToString()

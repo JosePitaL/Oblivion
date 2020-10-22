@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Studio.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -24,6 +25,8 @@ namespace Studio.View
             InitializeComponent();
         }
 
+        
+
         private void Thumb_DragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
         {
             var thumb = sender as Thumb;
@@ -34,6 +37,17 @@ namespace Studio.View
             top += e.VerticalChange;
             Canvas.SetLeft(root, left);
             Canvas.SetTop(root, top);
+        }
+
+        private void borde_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            var bo = sender as Border;
+            //var ca = VisualTreeHelper.GetParent(bo) as Grid;
+            //var can = ca.Parent as Grid;
+            //var l = can.Parent as Canvas;
+            //var uc = l.Parent as UserControl;
+            bo.Width = bo.ActualWidth;
+            bo.Height = bo.ActualHeight;
         }
     }
 }

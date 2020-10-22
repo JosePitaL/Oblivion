@@ -3,9 +3,11 @@ using Studio.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Shapes;
 
 namespace Studio.ViewModel
 {
@@ -14,8 +16,9 @@ namespace Studio.ViewModel
         public ICommand UpdateViewModelCommand { get; set; }
         public ICommand AddTabItemCommand { get; set; }
         public ICommand AddMacroCommand { get; set; }
-        
-        
+        public ICommand PaintLinesCommand { get; set; }
+
+
         private BaseViewModel _selectViewModel;
         public BaseViewModel SelectedViewModel
         {
@@ -54,6 +57,9 @@ namespace Studio.ViewModel
             UpdateViewModelCommand = new UpdateViewModelCommand(this);
             AddTabItemCommand = new AddTabItemCommand(this);
             AddMacroCommand = new AddMacroCommand(this);
+            PaintLinesCommand = new PaintLinesCommand(this);
         }
+
+        
     }
 }

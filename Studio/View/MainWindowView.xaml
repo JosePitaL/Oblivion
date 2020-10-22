@@ -32,11 +32,11 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <ToolBarTray Grid.Column="0">
-                    <ToolBar>
+                    <ToolBar HorizontalAlignment="Left" Width="168">
                         <Button FontFamily="Segoe MDL2 Assets" FontSize="30" Content="&#xE81E;" Command="{Binding AddTabItemCommand}"/>
                         <Button FontFamily="Segoe MDL2 Assets" FontSize="30" Content="&#xF407;" Command="{Binding AddMacroCommand}" CommandParameter="{Binding SelectedItem}"/>
                         <Button FontFamily="Segoe MDL2 Assets" FontSize="30" Content="&#xEB7E;" />
-                        <Button FontFamily="Segoe MDL2 Assets" FontSize="30" Content="&#xEF90;" />
+                        <Button FontFamily="Segoe MDL2 Assets" FontSize="30" Content="&#xEF90;" Command="{Binding PaintLinesCommand}" />
                     </ToolBar>
                 </ToolBarTray>
                 <ToolBarTray Grid.Column="1">

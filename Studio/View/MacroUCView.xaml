@@ -4,17 +4,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Studio.View"
-             mc:Ignorable="d" 
-             d:DesignHeight="100" d:DesignWidth="300" >
+             mc:Ignorable="d" >
     <Canvas>
-        <Grid Canvas.Left="20" Canvas.Top="20">
+        <Grid Canvas.Left="{Binding CanvasLeft, Mode=TwoWay}" Canvas.Top="{Binding CanvasTop, Mode=TwoWay}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0" Width="5" />
             <Grid   Grid.Column="1">
-                <Border Name="borde" Height="Auto" Width="300" BorderThickness="2" BorderBrush="{Binding Borde}" CornerRadius="5" >
+                <Border BorderThickness="2" BorderBrush="{Binding Borde}" CornerRadius="5"  SizeChanged="borde_SizeChanged" Height="{Binding MacroHeigth, Mode=TwoWay}" Width="{Binding MacroWidth, Mode=TwoWay}">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
@@ -23,12 +22,13 @@
                         </Grid.RowDefinitions>
                         <Grid Grid.Row="0">
                             <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="14*" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-
-                            <Button Content="Macro1" Grid.Column="0" Background="Transparent" BorderThickness="0" Width="290" HorizontalContentAlignment="Left" Command="{Binding SelectedMacroCommand}" />
-                            <Button FontFamily="Segoe MDL2 Assets" Content="&#xE712;" Grid.Column="1" BorderThickness="0" Background="Transparent" Margin="0,0,5,0"/>
+                            <TextBox Text="{Binding Index}" Background="Transparent" BorderThickness="0" HorizontalContentAlignment="Center" Grid.Column="0"/>
+                            <Button Content="Macro1" Grid.Column="1" Background="Transparent" BorderThickness="0" Width="290" HorizontalContentAlignment="Left" Command="{Binding SelectedMacroCommand}" />
+                            <Button FontFamily="Segoe MDL2 Assets" Content="&#xE712;" Grid.Column="2" BorderThickness="0" Background="Transparent" Margin="0,0,5,0"/>
                         </Grid>
                         <Separator Grid.Row="1" />
                         <TabControl Grid.Row="2">
@@ -47,9 +47,9 @@
                                         <RowDefinition Height="Auto" />
                                     </Grid.RowDefinitions>
                                     <Label Content="OK" Grid.Row="0" Grid.Column="0" />
-                                    <TextBox Grid.Row="0" Grid.Column="1" />
+                                    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding OkBoxValue, Mode=TwoWay}" />
                                     <Label Content="KO" Grid.Row="1" Grid.Column="0" />
-                                    <TextBox Grid.Row="1" Grid.Column="1" />
+                                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding KoBoxValue, Mode=TwoWay}" />
                                     <Label Content="Tiempo" Grid.Row="2" Grid.Column="0" />
                                     <TextBox Grid.Row="2" Grid.Column="1" />
 

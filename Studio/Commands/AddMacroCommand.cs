@@ -31,6 +31,7 @@ namespace Studio.Commands
                 {
                     int p = int.Parse(parameter.ToString());
                     viewmodel.NewTabItem[p].macroUCViewModels.Add(new MacroUCViewModel(viewmodel));
+
                 }
                 catch (Exception)
                 {

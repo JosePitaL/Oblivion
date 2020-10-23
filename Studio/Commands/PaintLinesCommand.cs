@@ -41,7 +41,7 @@ namespace Studio.Commands
                         var p1 = new Point(item.macroUCViewModels[i].CanvasLeft + item.macroUCViewModels[i].MacroWidth / 2, item.macroUCViewModels[i].CanvasTop + item.macroUCViewModels[i].MacroHeigth);
                         var p2 = new Point(p1.X, (p1.Y + item.macroUCViewModels[int.Parse(ok.Split("-")[1])].CanvasTop) / 2);
                         var p3 = new Point((item.macroUCViewModels[int.Parse(ok.Split("-")[1])].CanvasLeft + item.macroUCViewModels[int.Parse(ok.Split("-")[1])].MacroWidth / 2) , p2.Y);
-                        var p4 = new Point(p3.X, (p3.Y-p1.Y)+p3.Y);
+                        var p4 = new Point(p3.X, (p3.Y - p1.Y) + p3.Y);
 
                         item.canvas.Children.Add(new Polyline()
                         {
@@ -49,8 +49,8 @@ namespace Studio.Commands
                             {
                                 p1,
                                 p2,
-                                p3, 
-                                p4
+                                p3,
+                                p4,
                             },
                             Stroke = Brushes.Black,
                             Visibility = Visibility.Visible

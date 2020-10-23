@@ -5,10 +5,11 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Studio.View"
              mc:Ignorable="d" >
-    <Canvas>
+    <Canvas Background="White">
         <Grid Canvas.Left="{Binding CanvasLeft, Mode=TwoWay}" Canvas.Top="{Binding CanvasTop, Mode=TwoWay}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0" Width="5" />
@@ -52,13 +53,17 @@
                                     <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding KoBoxValue, Mode=TwoWay}" />
                                     <Label Content="Tiempo" Grid.Row="2" Grid.Column="0" />
                                     <TextBox Grid.Row="2" Grid.Column="1" />
-
                                 </Grid>
                             </TabItem>
                         </TabControl>
                     </Grid>
                 </Border>
                 
+            </Grid>
+            <Grid Grid.Column="2">
+                <Canvas>
+                    <ContentControl Content="{Binding WayLotMacro}" />
+                </Canvas>
             </Grid>
             <Thumb DragDelta="Thumb_DragDelta" Cursor="Hand">
                 <Thumb.Template>

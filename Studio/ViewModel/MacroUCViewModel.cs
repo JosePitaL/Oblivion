@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Ink;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shapes;
@@ -157,10 +158,16 @@ namespace Studio.ViewModel
             }
         }
 
-
+        private StackPanel _waLotMacro;
+        public StackPanel WayLotMacro
+        {
+            get { return _waLotMacro; }
+            set { _waLotMacro = value; }
+        }
 
         public MacroUCViewModel(MainWindowViewModel mainWindowViewModel)
         {
+            WayLotMacro = new StackPanel();
             MacroHeigth = 150;
             MacroWidth = 300;
             OkBoxValue = "0";

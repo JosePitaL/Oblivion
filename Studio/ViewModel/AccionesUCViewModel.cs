@@ -11,6 +11,7 @@ namespace Studio.ViewModel
     public class AccionesUCViewModel : BaseViewModel
     {
         public ICommand SelectedActionCommand { get; set; }
+        public ICommand DeleteActionCommand { get; set; }
 
         private ContentControl _accionButton;
         public ContentControl AccionButton
@@ -57,6 +58,7 @@ namespace Studio.ViewModel
             this.AccionButton = AccionButton;
             this.AccionTextBox = AccionTextBox;
             SelectedActionCommand = new SelectedActionCommand(this, main);
+            DeleteActionCommand = new DeleteActionCommand(this, main);
         }
 
     }

@@ -17,6 +17,7 @@ namespace Studio.ViewModel
     {
         
         public ICommand SelectedMacroCommand { get; set; }
+        public ICommand DeleteMacroCommand { get; set; }
 
         private MainWindowViewModel _mainWindowViewModel = null;
         public MainWindowViewModel mainWindowViewModel
@@ -178,7 +179,8 @@ namespace Studio.ViewModel
             accionForms = new ObservableCollection<AccionesUCViewModel>();
             this.mainWindowViewModel = mainWindowViewModel;
             Borde = Brushes.Black;
-            SelectedMacroCommand = new SelectedMacroCommand(this);  
+            SelectedMacroCommand = new SelectedMacroCommand(this);
+            DeleteMacroCommand = new DeleteMacroCommand(this);
         }
     }
 }

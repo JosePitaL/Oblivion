@@ -42,12 +42,15 @@
         <DataTemplate DataType="{x:Type viewmodels:EliminarValorLitaUCViewModel}">
             <views:EliminarValorLitaUCView />
         </DataTemplate>
-
         <DataTemplate DataType="{x:Type viewmodels:MacroUCViewModel}">
             <views:MacroUCView />
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewmodels:AccionesUCViewModel}">
             <views:AccionesUCView />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:PulsarUCViewModel}">
+            <views:PulsarUCView />
+        </DataTemplate>
+        
     </Application.Resources>
 </Application>

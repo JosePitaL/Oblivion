@@ -110,7 +110,7 @@
                         <Button Content="Añadir a una Lista" Grid.Row="11" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="AñadirenLista" />
                         <Button Content="Buscar en una Lista" Grid.Row="12" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="BuscarenLista"/>
                         <Button Content="Eliminar Lista" Grid.Row="13" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="EliminarenLista" />
-                        <Button Content="Pulsar" Grid.Row="14" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent"/>
+                        <Button Content="Pulsar" Grid.Row="14" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="Pulsar"/>
                         <Button Content="Reemplazar" Grid.Row="15" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent"/>
                         <Button Content="Evaluar" Grid.Row="16" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent"/>
                         <Button Content="Ocr" Grid.Row="17" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent"/>

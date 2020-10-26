@@ -64,6 +64,10 @@ namespace Studio.Commands
                 case "EliminarenLista":
                     viewModel.SelectedViewModel = new EliminarValorLitaUCViewModel();
                     break;
+                case "Pulsar":
+                    viewModel.SelectedViewModel = new PulsarUCViewModel();
+                    break;
+
             }
             foreach (var item in viewModel.NewTabItem)
             {

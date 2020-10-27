@@ -51,6 +51,23 @@
         <DataTemplate DataType="{x:Type viewmodels:PulsarUCViewModel}">
             <views:PulsarUCView />
         </DataTemplate>
-        
+        <DataTemplate DataType="{x:Type viewmodels:ReemplazarUCViewModel}">
+            <views:ReemplazarUCView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:OcrUcViewModel}">
+            <views:OcrUCView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:FuncionUVViewModel}">
+            <views:FuncionUCView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:ProcesoUCViewModel}">
+            <views:ProcesoUCView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:BucleUCViewModel}">
+            <views:BucleUCView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:PausaUCViewModel}">
+            <views:PausaUCView/>
+        </DataTemplate>
     </Application.Resources>
 </Application>

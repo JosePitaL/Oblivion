@@ -67,6 +67,24 @@ namespace Studio.Commands
                 case "Pulsar":
                     viewModel.SelectedViewModel = new PulsarUCViewModel();
                     break;
+                case "Reemplazar":
+                    viewModel.SelectedViewModel = new ReemplazarUCViewModel();
+                    break;
+                case "Ocr":
+                    viewModel.SelectedViewModel = new OcrUcViewModel();
+                    break;
+                case "Funcion":
+                    viewModel.SelectedViewModel = new FuncionUVViewModel();
+                    break;
+                case "Proceso":
+                    viewModel.SelectedViewModel = new ProcesoUCViewModel();
+                    break;
+                case "Bucle":
+                    viewModel.SelectedViewModel = new BucleUCViewModel();
+                    break;
+                case "Pausa":
+                    viewModel.SelectedViewModel = new PausaUCViewModel();
+                    break;
 
             }
             foreach (var item in viewModel.NewTabItem)

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Studio.ViewModel
 {
-    public class PulsarUCViewModel : BaseViewModel
+    public class BucleUCViewModel : BaseViewModel
     {
     }
 }

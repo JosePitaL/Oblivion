@@ -111,14 +111,14 @@
                         <Button Content="Buscar en una Lista" Grid.Row="12" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="BuscarenLista"/>
                         <Button Content="Eliminar Lista" Grid.Row="13" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="EliminarenLista" />
                         <Button Content="Pulsar" Grid.Row="14" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="Pulsar"/>
-                        <Button Content="Reemplazar" Grid.Row="15" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent"/>
+                        <Button Content="Reemplazar" Grid.Row="15" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="Reemplazar"/>
                         <Button Content="Evaluar" Grid.Row="16" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent"/>
-                        <Button Content="Ocr" Grid.Row="17" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent"/>
-                        <Button Content="Función" Grid.Row="18" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent"/>
-                        <Button Content="Proceso" Grid.Row="19" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent"/>
-                        <Button Content="Bucle" Grid.Row="20" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent"/>
+                        <Button Content="Ocr" Grid.Row="17" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent"  Command="{Binding UpdateViewModelCommand}"  CommandParameter="Ocr" />
+                        <Button Content="Función" Grid.Row="18" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="Funcion"/>
+                        <Button Content="Proceso" Grid.Row="19" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="Proceso"/>
+                        <Button Content="Bucle" Grid.Row="20" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}"  CommandParameter="Bucle" />
                         <Button Content="Error" Grid.Row="21" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent"/>
-                        <Button Content="Pausa" Grid.Row="22" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent"/>
+                        <Button Content="Pausa" Grid.Row="22" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="Pausa"/>
                     </Grid>
                 </Grid>
                 <Grid Grid.Column="1">

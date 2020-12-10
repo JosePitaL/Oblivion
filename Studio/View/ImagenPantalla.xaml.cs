@@ -36,13 +36,18 @@ namespace Studio.View
         {
             if (e.Key == Key.Escape)
             {
+
+
+                var id = Guid.NewGuid();
+           
+                Bitmap Captura = new Bitmap((int)this.ActualWidth, (int)this.ActualHeight, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+                System.Drawing.Rectangle Rectangulo = Screen.AllScreens[0].Bounds;
+                Graphics grafico = Graphics.FromImage(Captura);
+                grafico.CopyFromScreen((int)this.Left, (int)this.Top, 0, 0, Rectangulo.Size);
+                Captura.Save(@"C:\proba\" + id.ToString("N") + "-(" + this.Left + "," + this.Top + ").jpg");
+                System.Windows.Forms.Clipboard.SetImage(Captura);
                 
 
-                Bitmap bmpScreenshot = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height, PixelFormat.Format32bppArgb);
-                Graphics gfxScreenshot = Graphics.FromImage(bmpScreenshot);
-                gfxScreenshot.CopyFromScreen(Screen.PrimaryScreen.Bounds.X, Screen.PrimaryScreen.Bounds.Y, 0, 0, Screen.PrimaryScreen.Bounds.Size, CopyPixelOperation.SourceCopy);
-                bmpScreenshot.Save("C:\\proba\\proba.png", ImageFormat.Png) ;
-                   
                 Close();
                 mainWindowViewModel.maximarVentanaMain();
             }

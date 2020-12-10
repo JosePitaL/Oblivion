@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ocr", "Ocr\Ocr.csproj", "{9
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RpaService", "RpaService\RpaService.csproj", "{3DBCB506-3075-45E4-A30E-7E0A596B1705}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Studio", "Studio\Studio.csproj", "{EF0C8E7B-13B7-434C-ABB7-A5585CB8FC35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Studio", "Studio\Studio.csproj", "{EF0C8E7B-13B7-434C-ABB7-A5585CB8FC35}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

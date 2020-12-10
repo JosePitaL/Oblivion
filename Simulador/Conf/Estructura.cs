@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
-using static Simulador.Conf.Estructura;
 
 namespace Simulador.Conf
 {
@@ -286,10 +285,5 @@ namespace Simulador.Conf
         }
         #endregion
 
-        public struct POINT
-        {
-            public int X;
-            public int Y;
-        }
     }
 }

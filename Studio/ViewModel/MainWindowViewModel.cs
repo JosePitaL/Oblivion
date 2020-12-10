@@ -1,9 +1,13 @@
 ﻿using Studio.Commands;
 using Studio.Model;
+using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Windows;
+using System.Linq;
+using System.Text;
+using System.Windows.Controls;
 using System.Windows.Input;
-
+using System.Windows.Shapes;
 
 namespace Studio.ViewModel
 {
@@ -14,8 +18,7 @@ namespace Studio.ViewModel
         public ICommand AddMacroCommand { get; set; }
         public ICommand PaintLinesCommand { get; set; }
 
-       
-        
+
         private BaseViewModel _selectViewModel;
         public BaseViewModel SelectedViewModel
         {
@@ -49,38 +52,14 @@ namespace Studio.ViewModel
             }
         }
 
-
-        private WindowState _mainWindowStateChange;
-
-        public WindowState MainWindowStateChange
-        {
-            get { return _mainWindowStateChange; }
-
-            set
-            {
-                _mainWindowStateChange = value;
-                OnPropertyChanged(nameof(MainWindowStateChange));
-            }
-        }
-
         public MainWindowViewModel()
-        {
-
-            maximarVentanaMain();
+        { 
             UpdateViewModelCommand = new UpdateViewModelCommand(this);
             AddTabItemCommand = new AddTabItemCommand(this);
             AddMacroCommand = new AddMacroCommand(this);
             PaintLinesCommand = new PaintLinesCommand(this);
         }
 
-        public void maximarVentanaMain()
-        {
-            MainWindowStateChange = WindowState.Maximized;
-        }
-
-        public void minimizarVentanaMain()
-        {
-            MainWindowStateChange = WindowState.Minimized;
-        }
+        
     }
 }

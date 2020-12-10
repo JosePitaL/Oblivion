@@ -9,7 +9,9 @@
   <ItemGroup>
     <ProjectReference Include="..\Reproductor\Reproductor.csproj" />
   </ItemGroup>
-	<ItemGroup>
-		<Folder Include="Servicios\" />
-	</ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Servicios\" />
+  </ItemGroup>
+
 </Project>

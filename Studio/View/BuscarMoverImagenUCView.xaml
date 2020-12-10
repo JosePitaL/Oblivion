@@ -46,7 +46,7 @@
             <Label Content="A4" Grid.Column="6" HorizontalAlignment="Right" />
             <TextBox Grid.Column="7" />
         </Grid>
-        <Button Content="Capturar Imagen" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" Margin="0,0,0,20" Command="{Binding CaptureImageCommand}"/>
+        <Button Content="Capturar Imagen" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" Margin="0,0,0,20"/>
         <Label Content="Comando: " Grid.Column="0" Grid.Row="4" />
         <TextBox Grid.Column="1" Grid.Row="4" Margin="0,0,0,5" />
     </Grid>

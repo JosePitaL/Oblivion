@@ -1,5 +1,4 @@
-﻿using Studio.Servicios;
-using Studio.ViewModel;
+﻿using Studio.ViewModel;
 using System;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -33,13 +32,13 @@ namespace Studio.Commands
                     viewModel.SelectedViewModel = new BuscarImagenUCViewModel();
                     break;
                 case "BuscarMoverImagen":
-                    viewModel.SelectedViewModel = new BuscarMoverImagenUCViewModel(viewModel);
+                    viewModel.SelectedViewModel = new BuscarMoverImagenUCViewModel();
                     break;
                 case "ImagenClick":
                     viewModel.SelectedViewModel = new ImagenClickUCViewModel();
                     break;
                 case "MoverRaton":
-                    viewModel.SelectedViewModel = new MoverRatonUCViewModel(viewModel);
+                    viewModel.SelectedViewModel = new MoverRatonUCViewModel();
                     break;
                 case "ClickarRaton":
                     viewModel.SelectedViewModel = new ClickarRatonUCModel();
@@ -65,28 +64,6 @@ namespace Studio.Commands
                 case "EliminarenLista":
                     viewModel.SelectedViewModel = new EliminarValorLitaUCViewModel();
                     break;
-                case "Pulsar":
-                    viewModel.SelectedViewModel = new PulsarUCViewModel();
-                    break;
-                case "Reemplazar":
-                    viewModel.SelectedViewModel = new ReemplazarUCViewModel();
-                    break;
-                case "Ocr":
-                    viewModel.SelectedViewModel = new OcrUcViewModel();
-                    break;
-                case "Funcion":
-                    viewModel.SelectedViewModel = new FuncionUVViewModel();
-                    break;
-                case "Proceso":
-                    viewModel.SelectedViewModel = new ProcesoUCViewModel();
-                    break;
-                case "Bucle":
-                    viewModel.SelectedViewModel = new BucleUCViewModel();
-                    break;
-                case "Pausa":
-                    viewModel.SelectedViewModel = new PausaUCViewModel();
-                    break;
-
             }
             foreach (var item in viewModel.NewTabItem)
             {

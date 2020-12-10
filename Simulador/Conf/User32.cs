@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using static Simulador.Conf.Estructura;
+using System.Text;
 
 namespace Simulador.Conf
 {
@@ -11,8 +12,6 @@ namespace Simulador.Conf
     {
         [DllImport("user32.dll")]
         public static extern long SetCursorPos(int x, int y);
-        [DllImport("user32.dll")]
-        public static extern bool GetCursorPos(out POINT point);
 
         [DllImport("user32.dll", SetLastError = true)]
         public static extern uint SendInput(uint nInputs, ref Estructura.INPUT pInputs, int cbSize);

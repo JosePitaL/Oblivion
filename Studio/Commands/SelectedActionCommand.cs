@@ -38,7 +38,7 @@ namespace Studio.Commands
                     viewModel.SelectedViewModel = new ImagenClickUCViewModel();
                     break;
                 case "MoverRaton":
-                    viewModel.SelectedViewModel = new MoverRatonUCViewModel();
+                    viewModel.SelectedViewModel = new MoverRatonUCViewModel(viewModel);
                     break;
                 case "ClickarRaton":
                     viewModel.SelectedViewModel = new ClickarRatonUCModel();

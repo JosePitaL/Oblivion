@@ -7,13 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Servicios\**" />
-    <EmbeddedResource Remove="Servicios\**" />
-    <None Remove="Servicios\**" />
-    <Page Remove="Servicios\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Reproductor\Reproductor.csproj" />
   </ItemGroup>
 

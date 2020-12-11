@@ -29,7 +29,7 @@ namespace Studio.Commands
             switch (p.Content.ToString())
             {
                 case "BuscarImagen":
-                    viewModel.SelectedViewModel = new BuscarImagenUCViewModel();
+                    viewModel.SelectedViewModel = new BuscarImagenUCViewModel(viewModel);
                     break;
                 case "BuscarMoverImagen":
                     viewModel.SelectedViewModel = new BuscarMoverImagenUCViewModel();

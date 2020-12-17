@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Studio.View"
-             mc:Ignorable="d" Background="White" >
+             mc:Ignorable="d" Background="White">
     <Canvas Background="White">
         <Grid Canvas.Left="{Binding CanvasLeft, Mode=TwoWay}" Canvas.Top="{Binding CanvasTop, Mode=TwoWay}">
             <Grid.ColumnDefinitions>
@@ -28,7 +28,7 @@
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <TextBox Text="{Binding Index}" Background="White" BorderThickness="0" HorizontalContentAlignment="Center" Grid.Column="0"/>
-                            <Button Content="Macro1" Grid.Column="1" Background="White" BorderThickness="0" Width="290" HorizontalContentAlignment="Left" Command="{Binding SelectedMacroCommand}" />
+                            <Button Content="{Binding Macro.nombre}" Grid.Column="1" Background="White" BorderThickness="0" Width="290" HorizontalContentAlignment="Left" Command="{Binding SelectedMacroCommand}" />
                             <Button FontFamily="Segoe MDL2 Assets" Content="&#xE711;" Grid.Column="2" BorderThickness="0" Background="White" Margin="0,0,5,0" Command="{Binding DeleteMacroCommand}"/>
                         </Grid>
                         <Separator Grid.Row="1" />

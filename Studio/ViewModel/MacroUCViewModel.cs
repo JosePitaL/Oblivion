@@ -166,6 +166,13 @@ namespace Studio.ViewModel
             set { _waLotMacro = value; }
         }
 
+        private Macro _macro;
+        public Macro Macro
+        {
+            get { return _macro; }
+            set { _macro = value; }
+        }
+
         public MacroUCViewModel(MainWindowViewModel mainWindowViewModel)
         {
             WayLotMacro = new StackPanel();

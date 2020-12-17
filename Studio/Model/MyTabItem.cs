@@ -15,6 +15,7 @@ namespace Studio.Model
         public Canvas canvas { get; set; }
         public ScrollViewer scrollViewer { get; set; }
         public ObservableCollection<MacroUCViewModel> macroUCViewModels { get; set; }
+        public Lote lote { get; set; }
 
         public MyTabItem(ItemsControl itemsControl, Canvas canvas, ScrollViewer scrollViewer, ObservableCollection<MacroUCViewModel> macroUCViewModels) : base()
         {
@@ -35,6 +36,7 @@ namespace Studio.Model
 
             scrollViewer.Content = canvas;
             this.Content = scrollViewer;
+            
         }
 
         public void CleanLines()

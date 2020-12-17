@@ -18,6 +18,7 @@ namespace Studio.ViewModel
         public ICommand AddTabItemCommand { get; set; }
         public ICommand AddMacroCommand { get; set; }
         public ICommand PaintLinesCommand { get; set; }
+        public ICommand OpenFileCommand { get; set; }
 
 
         private BaseViewModel _selectViewModel;
@@ -54,7 +55,6 @@ namespace Studio.ViewModel
         }
 
         private WindowState _mainWindowState;
-
         public WindowState MainWindowState
         {
             get { return _mainWindowState; }
@@ -65,14 +65,41 @@ namespace Studio.ViewModel
             }
         }
 
+        private string _runFile;
+
+        public string RunFile
+        {
+            get { return _runFile; }
+            set 
+            {
+                _runFile = value;
+                OnPropertyChanged(nameof(RunFile));
+            }
+        }
+
+        private ObservableCollection<MyTreeViewAutomatismo> _automata;
+        public ObservableCollection<MyTreeViewAutomatismo> Automata
+        {
+            get { return _automata; }
+            set
+            {
+                _automata = value;
+                OnPropertyChanged(nameof(Automata));
+            }
+        }
+
+
 
         public MainWindowViewModel()
         {
             MainWindowState = WindowState.Maximized;
+            Automata = new ObservableCollection<MyTreeViewAutomatismo>();
             UpdateViewModelCommand = new UpdateViewModelCommand(this);
             AddTabItemCommand = new AddTabItemCommand(this);
             AddMacroCommand = new AddMacroCommand(this);
             PaintLinesCommand = new PaintLinesCommand(this);
+            OpenFileCommand = new OpenFileCommand(this);
+            
         }
 
         

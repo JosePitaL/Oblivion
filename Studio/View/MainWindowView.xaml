@@ -17,7 +17,7 @@
                 <Menu DockPanel.Dock="Top">
                     <MenuItem Header="Archivo">
                         <MenuItem Header="Nuevo"/>
-                        <MenuItem Header="Abrir"/>
+                        <MenuItem Header="Abrir" Command="{Binding OpenFileCommand}"/>
                         <MenuItem Header="Guardar"/>
                         <Separator/>
                         <MenuItem Header="Salir"/>
@@ -127,8 +127,7 @@
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <TabControl Grid.Row="0" ItemsSource="{Binding NewTabItem}" SelectedIndex="{Binding SelectedItem}" />
-                    <RichTextBox AcceptsReturn="True" AcceptsTab="True" Height="Auto" FontSize="12" Foreground="Green" Grid.Row="1" />
-                    
+                    <TreeView Grid.Row="1" ItemsSource="{Binding Automata}" />
                 </Grid>
                 <Grid Grid.Column="2">
                     <Grid.RowDefinitions>

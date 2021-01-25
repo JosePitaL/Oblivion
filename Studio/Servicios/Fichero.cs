@@ -68,6 +68,10 @@ namespace Studio.Servicios
                     {
                         Header = "Camino"
                     };
+                    MyTreeViewAutomatismo Acciones = new MyTreeViewAutomatismo(auto, new System.Windows.Controls.TextBox())
+                    {
+                        Header = "Acciones"
+                    };
                     MyTreeViewAutomatismo Cok = new MyTreeViewAutomatismo(auto, new System.Windows.Controls.TextBox());
                     Cok.textBox.Text = "OK : " + Macro.camino.Ok;
 
@@ -81,11 +85,12 @@ namespace Studio.Servicios
                     Camino.Items.Add(Cko);
                     Camino.Items.Add(Time);
                     my2.Items.Add(Camino);
+                    my2.Items.Add(Acciones);
                     foreach (var Accion in Macro.Acciones)
                     {
                         MyTreeViewAutomatismo my3 = new MyTreeViewAutomatismo(auto, new System.Windows.Controls.TextBox());
                         my3.textBox.Text = Accion.Comando + " : " + Accion.Valor;
-                        my2.Items.Add(my3);
+                        Acciones.Items.Add(my3);
                     }
                 }
             }

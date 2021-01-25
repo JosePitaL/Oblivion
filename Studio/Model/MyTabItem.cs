@@ -36,7 +36,6 @@ namespace Studio.Model
 
             scrollViewer.Content = canvas;
             this.Content = scrollViewer;
-            
         }
 
         public void CleanLines()

@@ -25,43 +25,43 @@ namespace Studio.Commands
 
         public void Execute(object parameter)
         {
-            var p = parameter as ContentControl;
-            switch (p.Content.ToString())
+            
+            switch (parameter.ToString())
             {
-                case "BuscarImagen":
+                case "IMAGEN":
                     viewModel.SelectedViewModel = new BuscarImagenUCViewModel(viewModel);
                     break;
-                case "BuscarMoverImagen":
+                case "IMAGENMOVE":
                     viewModel.SelectedViewModel = new BuscarMoverImagenUCViewModel();
                     break;
-                case "ImagenClick":
+                case "IMAGENCLICK":
                     viewModel.SelectedViewModel = new ImagenClickUCViewModel();
                     break;
-                case "MoverRaton":
+                case "MOVER":
                     viewModel.SelectedViewModel = new MoverRatonUCViewModel(viewModel);
                     break;
-                case "ClickarRaton":
+                case "CLICK":
                     viewModel.SelectedViewModel = new ClickarRatonUCModel();
                     break;
-                case "Escribir":
+                case "ESCRIBIR":
                     viewModel.SelectedViewModel = new EscribirUCViewModel();
                     break;
-                case "GuardarHash":
+                case "GHASH":
                     viewModel.SelectedViewModel = new GuardarHashUCViewModel();
                     break;
-                case "LeerHash":
+                case "LHASH":
                     viewModel.SelectedViewModel = new LeerHashUCViewModel();
                     break;
-                case "CrearLista":
+                case "LISTA":
                     viewModel.SelectedViewModel = new CrearListaUCViewModel();
                     break;
-                case "BuscarenLista":
+                case "BUSCARLISTA":
                     viewModel.SelectedViewModel = new BuscarValorListaUCViewModel();
                     break;
-                case "AñadirenLista":
+                case "ANADIRLISTA":
                     viewModel.SelectedViewModel = new AnadirValorListaUCViewModel();
                     break;
-                case "EliminarenLista":
+                case "ELIMINARLISTA":
                     viewModel.SelectedViewModel = new EliminarValorLitaUCViewModel();
                     break;
             }

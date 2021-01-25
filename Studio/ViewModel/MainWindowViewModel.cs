@@ -20,6 +20,16 @@ namespace Studio.ViewModel
         public ICommand PaintLinesCommand { get; set; }
         public ICommand OpenFileCommand { get; set; }
 
+        private Automatismo _automatismo;
+        public Automatismo Automatismo
+        {
+            get { return _automatismo; }
+            set
+            {
+                _automatismo = value;
+                OnPropertyChanged(nameof(Automatismo));
+            }
+        }
 
         private BaseViewModel _selectViewModel;
         public BaseViewModel SelectedViewModel

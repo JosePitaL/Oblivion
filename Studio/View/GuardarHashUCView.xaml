@@ -9,7 +9,8 @@
     <Grid Margin="0,0,5,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition />
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -17,12 +18,12 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Label Content="Clave: " Grid.Column="0" Grid.Row="0" Margin="0,0,0,5" />
-        <TextBox Grid.Column="1" Grid.Row="0" Margin="0,0,0,5" />
-        <Label Content="Valor: " Grid.Column="0" Grid.Row="1" Margin="0,0,0,20" />
-        <TextBox Grid.Column="1" Grid.Row="1" Margin="0,0,0,20" />
-        <Label Content="Comando: " Grid.Column="0" Grid.Row="2" Margin="0,0,0,20" />
-        <TextBox Grid.Column="1" Grid.Row="2" Margin="0,0,0,20" />
+        <Label Content="Clave: " Grid.Column="0" Grid.Row="0" Margin="0,0,363,5" Grid.ColumnSpan="2" />
+        <TextBox Grid.Column="1" Grid.Row="0" Margin="0,0,0,5" Grid.ColumnSpan="2" />
+        <Label Content="Valor: " Grid.Column="0" Grid.Row="1" Margin="0,0,363,20" Grid.ColumnSpan="2" />
+        <TextBox Grid.Column="1" Grid.Row="1" Margin="0,0,0,20" Grid.ColumnSpan="2" />
+        <Label Content="Comando: " Grid.Column="0" Grid.Row="2" Margin="0,0,363,20" Grid.ColumnSpan="2" />
+        <TextBox Grid.Column="1" Grid.Row="2" Margin="0,0,0,20" Grid.ColumnSpan="2" />
 
     </Grid>
 </UserControl>

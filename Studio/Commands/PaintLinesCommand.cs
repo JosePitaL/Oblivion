@@ -34,8 +34,9 @@ namespace Studio.Commands
 
                 for (int i = 0; i < item.macroUCViewModels.Count; i++)
                 {
-                    string ok = item.macroUCViewModels[i].OkBoxValue;
-                    string ko = item.macroUCViewModels[i].KoBoxValue;
+                    string ok = item.macroUCViewModels[i].Macro.camino.Ok;
+                    string ko = item.macroUCViewModels[i].Macro.camino.Ko;
+
                     if (ok.Equals("0") || ko.Equals("0") || ko is null || ok is null) return;
                     if (ok.Equals(ko))
                     {

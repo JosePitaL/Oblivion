@@ -37,34 +37,45 @@ namespace Studio.Commands
             Automatismo auto = fichero.OpenRobot();
             fichero.GenerateTree(auto, Main);
 
-            //Crear arbol
-            foreach (var item in auto.Lotes)
+            Main.Automatismo = auto;
+
+            
+            foreach (var item in Main.Automatismo.Lotes)
             {
+                int i = 0;
                 ObservableCollection<MacroUCViewModel> macroUCs = new ObservableCollection<MacroUCViewModel>();
                 MyTabItem tabItem = new MyTabItem(new ItemsControl(), new Canvas(), new ScrollViewer(), macroUCs)
                 {
-                    Header = item.Nombre
+                    lote = item,
                 };
+                tabItem.Header = tabItem.lote.Nombre;
                 Main.NewTabItem.Add(tabItem);
 
                 foreach (var item1 in item.Macros)
                 {
                     MacroUCViewModel macro = new MacroUCViewModel(Main);
+                    macro.Index = i.ToString();
+                    macro.Macro = item1;
                     ObservableCollection<AccionesUCViewModel> accionesUCViews = new ObservableCollection<AccionesUCViewModel>();
                     macro.accionForms = accionesUCViews;
+
                     macro.Macro = item1;
                     macroUCs.Add(macro);
-                    
-                   
                     foreach (var item2 in item1.Acciones)
                     {
-                        AccionesUCViewModel acciones = new AccionesUCViewModel(new ContentControl(), "",  Main);
+                        if (accionesUCViews.Count > 3)
+                        {
+                            macro.MacroHeigth += 30;
+                        }
+                        AccionesUCViewModel acciones = new AccionesUCViewModel(Main)
+                        {
+                            Accion = item2
+                        };
                         accionesUCViews.Add(acciones);
                     }
+                    i++;
                 }
             }
-
-
         }
     }
 }

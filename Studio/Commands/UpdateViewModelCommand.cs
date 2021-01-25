@@ -38,10 +38,7 @@ namespace Studio.Commands
                         {
                             item1.MacroHeigth += 30;
                         }
-                        item1.accionForms.Add(new AccionesUCViewModel(new ContentControl()
-                        {
-                            Content = parameter.ToString()
-                        }, "", viewModel));
+                        item1.accionForms.Add(new AccionesUCViewModel(viewModel));
                     }
                 }
             }

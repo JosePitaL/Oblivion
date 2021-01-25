@@ -63,38 +63,6 @@ namespace Studio.ViewModel
             }
         }
 
-        private string _okBoxValue;
-        public string OkBoxValue
-        {
-            get { return _okBoxValue; }
-            set 
-            { 
-                _okBoxValue = value;
-                OnPropertyChanged(nameof(OkBoxValue));
-                if (_mainWindowViewModel != null)
-                {
-                    mainWindowViewModel.NewTabItem[mainWindowViewModel.SelectedItem].CleanLines();
-                    mainWindowViewModel.PaintLinesCommand.Execute("");
-                }
-            }
-        }
-
-        private string _koBoxValue;
-        public string KoBoxValue
-        {
-            get { return _koBoxValue; }
-            set 
-            { 
-                _koBoxValue = value;
-                OnPropertyChanged(nameof(KoBoxValue));
-                if (_mainWindowViewModel != null)
-                {
-                    mainWindowViewModel.NewTabItem[mainWindowViewModel.SelectedItem].CleanLines();
-                    mainWindowViewModel.PaintLinesCommand.Execute("");
-                }
-            }
-        }
-
         private double _macroWidth;
         public double MacroWidth
         {
@@ -178,8 +146,6 @@ namespace Studio.ViewModel
             WayLotMacro = new StackPanel();
             MacroHeigth = 150;
             MacroWidth = 300;
-            OkBoxValue = "0";
-            KoBoxValue = "0";
             CanvasLeft =0;
             CanvasTop = 0;
             Index = (mainWindowViewModel.NewTabItem[mainWindowViewModel.SelectedItem].macroUCViewModels.Count).ToString();

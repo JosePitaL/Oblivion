@@ -13,7 +13,7 @@
             <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
         <Button FontFamily="Segoe MDL2 Assets" Content="&#xE711;" Grid.Column="0" BorderThickness="0" Background="Transparent" Command="{Binding DeleteActionCommand}"/>
-        <Button Grid.Column="1" HorizontalAlignment="Left" Background="{Binding ActionSeleted}" BorderThickness="0" Content="{Binding AccionButton}" Command="{Binding SelectedActionCommand}" CommandParameter="{Binding AccionButton}" />
-        <TextBox Grid.Column="2" HorizontalContentAlignment="Left" Height="25" Text="{Binding AccionTextBox}" />
+        <Button Grid.Column="1" HorizontalAlignment="Left" Background="{Binding ActionSeleted}" BorderThickness="0" Content="{Binding Accion.Comando}" Command="{Binding SelectedActionCommand}" CommandParameter="{Binding Accion.Comando}" />
+        <TextBox Grid.Column="2" HorizontalContentAlignment="Left" Height="25" Text="{Binding Accion.Valor}" />
     </Grid>
 </UserControl>

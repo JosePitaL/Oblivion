@@ -35,9 +35,9 @@ namespace Studio.Commands
                     }
                 }
             }
-            int i = 0;
             foreach (var item in macroUCViewModel.mainWindowViewModel.NewTabItem)
             {
+                int i = 0;
                 foreach (var item1 in item.macroUCViewModels)
                 {
                     item1.Index = i.ToString();

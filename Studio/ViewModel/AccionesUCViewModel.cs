@@ -1,4 +1,5 @@
 ﻿using Studio.Commands;
+using Studio.Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,27 +14,6 @@ namespace Studio.ViewModel
         public ICommand SelectedActionCommand { get; set; }
         public ICommand DeleteActionCommand { get; set; }
 
-        private ContentControl _accionButton;
-        public ContentControl AccionButton
-        {
-            get { return _accionButton; }
-            set 
-            { 
-                _accionButton = value;
-                OnPropertyChanged(nameof(AccionButton));
-            }
-        }
-
-        private string _accionTextBox;
-        public string AccionTextBox
-        {
-            get { return _accionTextBox; }
-            set
-            {
-                _accionTextBox = value;
-                OnPropertyChanged(nameof(AccionTextBox));
-            }
-        }
 
         private Brush _actionSeleted;
         public Brush ActionSeleted
@@ -46,17 +26,26 @@ namespace Studio.ViewModel
             }
         }
 
+        private Accion _accion;
+        public Accion Accion
+        {
+            get { return _accion; }
+            set
+            {
+                _accion = value;
+                OnPropertyChanged(nameof(Accion));
+            }
+        }
+
         public MainWindowViewModel main { get; set; }
 
 
 
 
-        public AccionesUCViewModel(ContentControl AccionButton, string AccionTextBox, MainWindowViewModel main)
+        public AccionesUCViewModel(MainWindowViewModel main)
         {
             ActionSeleted = Brushes.Transparent;
             this.main = main;
-            this.AccionButton = AccionButton;
-            this.AccionTextBox = AccionTextBox;
             SelectedActionCommand = new SelectedActionCommand(this, main);
             DeleteActionCommand = new DeleteActionCommand(this, main);
         }

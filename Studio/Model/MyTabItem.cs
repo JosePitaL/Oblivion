@@ -44,6 +44,10 @@ namespace Studio.Model
             {
                 this.canvas.Children.Remove(line);
             }
+            foreach (var grid in this.macroUCViewModels)
+            {
+                grid.WayLotMacro.Children.Clear();
+            }
         }
     
     }  

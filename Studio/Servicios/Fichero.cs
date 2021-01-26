@@ -35,8 +35,9 @@ namespace Studio.Servicios
             {
                 if (File.Exists(Path))
                 {
-                    var file = File.ReadAllText(Path, Encoding.UTF8);
-                    var automatismo = JsonConvert.DeserializeObject<Automatismo>(file);
+                    StreamReader f = new StreamReader(Path, Encoding.UTF8);
+                    //var file = File.ReadAllText(Path, Encoding.UTF8);
+                    var automatismo = JsonConvert.DeserializeObject<Automatismo>(f.ReadToEnd());
                     return automatismo;
                 }
                 else return null;

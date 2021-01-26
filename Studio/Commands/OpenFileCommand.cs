@@ -43,27 +43,25 @@ namespace Studio.Commands
             foreach (var item in Main.Automatismo.Lotes)
             {
                 int i = 0;
-                ObservableCollection<MacroUCViewModel> macroUCs = new ObservableCollection<MacroUCViewModel>();
-                MyTabItem tabItem = new MyTabItem(new ItemsControl(), new Canvas(), new ScrollViewer(), macroUCs)
+                MyTabItem tabItem = new MyTabItem(new ItemsControl(), new Canvas(), new ScrollViewer(), new ObservableCollection<MacroUCViewModel>())
                 {
                     lote = item,
                 };
                 tabItem.Header = tabItem.lote.Nombre;
                 Main.NewTabItem.Add(tabItem);
-
+                double top = 0;
                 foreach (var item1 in item.Macros)
                 {
                     MacroUCViewModel macro = new MacroUCViewModel(Main);
                     macro.Index = i.ToString();
                     macro.Macro = item1;
-                    ObservableCollection<AccionesUCViewModel> accionesUCViews = new ObservableCollection<AccionesUCViewModel>();
-                    macro.accionForms = accionesUCViews;
+                    macro.accionForms = new ObservableCollection<AccionesUCViewModel>();
+                    macro.CanvasTop = top;
+                    tabItem.macroUCViewModels.Add(macro);
 
-                    macro.Macro = item1;
-                    macroUCs.Add(macro);
                     foreach (var item2 in item1.Acciones)
                     {
-                        if (accionesUCViews.Count > 3)
+                        if (macro.accionForms.Count > 3)
                         {
                             macro.MacroHeigth += 30;
                         }
@@ -71,11 +69,18 @@ namespace Studio.Commands
                         {
                             Accion = item2
                         };
-                        accionesUCViews.Add(acciones);
+                        macro.accionForms.Add(acciones);
                     }
+                    top += macro.MacroHeigth + 50;
                     i++;
                 }
             }
+
+            foreach (var item in Main.NewTabItem)
+            {
+                item.CleanLines();
+            }
+            Main.PaintLinesCommand.Execute("");
         }
     }
 }

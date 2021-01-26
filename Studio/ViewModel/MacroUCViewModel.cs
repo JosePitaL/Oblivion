@@ -87,7 +87,7 @@ namespace Studio.ViewModel
             {
                 _macroHeigth = value;
                 OnPropertyChanged(nameof(MacroHeigth));
-                if(_mainWindowViewModel != null)
+                if (_mainWindowViewModel != null)
                 {
                     mainWindowViewModel.NewTabItem[mainWindowViewModel.SelectedItem].CleanLines();
                     mainWindowViewModel.PaintLinesCommand.Execute("");
@@ -131,14 +131,41 @@ namespace Studio.ViewModel
         public StackPanel WayLotMacro
         {
             get { return _waLotMacro; }
-            set { _waLotMacro = value; }
+            set 
+            {
+                _waLotMacro = value;
+                OnPropertyChanged(nameof(WayLotMacro));
+            }
         }
 
         private Macro _macro;
         public Macro Macro
         {
             get { return _macro; }
-            set { _macro = value; }
+            set
+            {
+                _macro = value;
+                OnPropertyChanged(nameof(Macro));
+                if (_mainWindowViewModel != null)
+                {
+                    if (_mainWindowViewModel != null)
+                    {
+                        try
+                        {
+                            mainWindowViewModel.NewTabItem[mainWindowViewModel.SelectedItem].CleanLines();
+                            mainWindowViewModel.PaintLinesCommand.Execute("");
+                        }
+                        catch (Exception)
+                        {
+
+                            
+                        }
+                        
+                    }
+
+                }
+            }
+
         }
 
         public MacroUCViewModel(MainWindowViewModel mainWindowViewModel)
@@ -146,8 +173,14 @@ namespace Studio.ViewModel
             WayLotMacro = new StackPanel();
             MacroHeigth = 150;
             MacroWidth = 300;
+            Macro = new Macro()
+            {
+                camino = new Camino()
+            };
+            Macro.camino.Ok = "0-0";
+            Macro.camino.Ko = "0-0";
             CanvasLeft =0;
-            CanvasTop = 0;
+            CanvasTop = 150;
             Index = (mainWindowViewModel.NewTabItem[mainWindowViewModel.SelectedItem].macroUCViewModels.Count).ToString();
             accionForms = new ObservableCollection<AccionesUCViewModel>();
             this.mainWindowViewModel = mainWindowViewModel;

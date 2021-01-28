@@ -18,6 +18,7 @@ namespace Studio.ViewModel
         
         public ICommand SelectedMacroCommand { get; set; }
         public ICommand DeleteMacroCommand { get; set; }
+        public ICommand LostFocusCaminoCommand { get; set; }
 
         private MainWindowViewModel _mainWindowViewModel = null;
         public MainWindowViewModel mainWindowViewModel
@@ -148,25 +149,22 @@ namespace Studio.ViewModel
                 OnPropertyChanged(nameof(Macro));
                 if (_mainWindowViewModel != null)
                 {
-                    if (_mainWindowViewModel != null)
+                    try
                     {
-                        try
-                        {
-                            mainWindowViewModel.NewTabItem[mainWindowViewModel.SelectedItem].CleanLines();
-                            mainWindowViewModel.PaintLinesCommand.Execute("");
-                        }
-                        catch (Exception)
-                        {
+                        mainWindowViewModel.NewTabItem[mainWindowViewModel.SelectedItem].CleanLines();
+                        mainWindowViewModel.PaintLinesCommand.Execute("");
+                    }
+                    catch (Exception)
+                    {
 
-                            
-                        }
-                        
+
                     }
 
                 }
             }
-
         }
+        
+
 
         public MacroUCViewModel(MainWindowViewModel mainWindowViewModel)
         {
@@ -176,9 +174,11 @@ namespace Studio.ViewModel
             Macro = new Macro()
             {
                 camino = new Camino()
+                {
+                    Ok = "0",
+                    Ko = "0"
+                }
             };
-            Macro.camino.Ok = "0-0";
-            Macro.camino.Ko = "0-0";
             CanvasLeft =0;
             CanvasTop = 150;
             Index = (mainWindowViewModel.NewTabItem[mainWindowViewModel.SelectedItem].macroUCViewModels.Count).ToString();
@@ -187,6 +187,7 @@ namespace Studio.ViewModel
             Borde = Brushes.Black;
             SelectedMacroCommand = new SelectedMacroCommand(this);
             DeleteMacroCommand = new DeleteMacroCommand(this);
+            LostFocusCaminoCommand = new LostFocusCaminoCommand(this);
         }
     }
 }

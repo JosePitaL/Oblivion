@@ -1,4 +1,5 @@
-﻿using Studio.ViewModel;
+﻿using Studio.Model;
+using Studio.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -23,6 +24,7 @@ namespace Studio.View
         public MacroUCView()
         {
             InitializeComponent();
+            
         }
 
         

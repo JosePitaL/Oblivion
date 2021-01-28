@@ -39,78 +39,82 @@ namespace Studio.Commands
                    
                     if (ok.Equals(ko))
                     {
-                        if(IndexMainVM == int.Parse(ok.Split("-")[0]))
+                        if(ok != "0" && ko != "0" )
                         {
-                            Point p1,p2,p3,p4;
-                            try
+                            if (IndexMainVM == int.Parse(ok.Split("-")[0]))
                             {
-                                item.macroUCViewModels[i].WayLotMacro.Children.Clear();
-                                 p1 = new Point(item.macroUCViewModels[i].CanvasLeft + item.macroUCViewModels[i].MacroWidth / 2, item.macroUCViewModels[i].CanvasTop + item.macroUCViewModels[i].MacroHeigth);
-                                 p2 = new Point(p1.X, (p1.Y + item.macroUCViewModels[int.Parse(ok.Split("-")[1])].CanvasTop) / 2);
-                                 p3 = new Point((item.macroUCViewModels[int.Parse(ok.Split("-")[1])].CanvasLeft + item.macroUCViewModels[int.Parse(ok.Split("-")[1])].MacroWidth / 2), p2.Y);
-                                 p4 = new Point(p3.X, (p3.Y - p1.Y) + p3.Y);
-                            }
-                            catch (Exception)
-                            {
+                                Point p1, p2, p3, p4;
+                                try
+                                {
+                                    item.macroUCViewModels[i].WayLotMacro.Children.Clear();
+                                    p1 = new Point(item.macroUCViewModels[i].CanvasLeft + item.macroUCViewModels[i].MacroWidth / 2, item.macroUCViewModels[i].CanvasTop + item.macroUCViewModels[i].MacroHeigth);
+                                    p2 = new Point(p1.X, (p1.Y + item.macroUCViewModels[int.Parse(ok.Split("-")[1])].CanvasTop) / 2);
+                                    p3 = new Point((item.macroUCViewModels[int.Parse(ok.Split("-")[1])].CanvasLeft + item.macroUCViewModels[int.Parse(ok.Split("-")[1])].MacroWidth / 2), p2.Y);
+                                    p4 = new Point(p3.X, (p3.Y - p1.Y) + p3.Y);
+                                }
+                                catch (Exception)
+                                {
 
-                            }
-                            
-                            item.canvas.Children.Add(new Polyline()
-                            {
-                                Points = new PointCollection()
+                                }
+
+                                item.canvas.Children.Add(new Polyline()
+                                {
+                                    Points = new PointCollection()
                                 {
                                     p1,
                                     p2,
                                     p3,
                                     p4,
                                 },
-                                Stroke = Brushes.Black,
-                                Visibility = Visibility.Visible
+                                    Stroke = Brushes.Black,
+                                    Visibility = Visibility.Visible
+                                }
+                             );
                             }
-                         );
-                        }
-                        else
-                        {
-                            Grid g = new Grid();
-                            g.Children.Add(new Ellipse()
+                            else
                             {
-                                Stroke = Brushes.Green,
-                                StrokeThickness = 3,
-                                Width = 50,
-                                Height = 50,
-                                Visibility = Visibility.Visible
-                            });
-                           g.Children.Add(new TextBlock()
-                            {
-                                Text = "L " + ok.Split("-")[0] + "\n" + "M " + ok.Split("-")[1],
-                                VerticalAlignment = VerticalAlignment.Center,
-                                HorizontalAlignment = HorizontalAlignment.Center
-                            });
-                            item.macroUCViewModels[i].WayLotMacro.Children.Add(g);
+                                Grid g = new Grid();
+                                g.Children.Add(new Ellipse()
+                                {
+                                    Stroke = Brushes.Green,
+                                    StrokeThickness = 3,
+                                    Width = 50,
+                                    Height = 50,
+                                    Visibility = Visibility.Visible
+                                });
+                                g.Children.Add(new TextBlock()
+                                {
+                                    Text = "L " + ok.Split("-")[0] + "\n" + "M " + ok.Split("-")[1],
+                                    VerticalAlignment = VerticalAlignment.Center,
+                                    HorizontalAlignment = HorizontalAlignment.Center
+                                });
+                                item.macroUCViewModels[i].WayLotMacro.Children.Add(g);
 
-                            Grid g1 = new Grid();
-                            g1.Children.Add(new Ellipse()
-                            {
-                                Stroke = Brushes.Red,
-                                StrokeThickness = 3,
-                                Width = 50,
-                                Height = 50,
-                                Visibility = Visibility.Visible
-                            });
-                            g1.Children.Add(new TextBlock()
-                            {
-                                Text = "L " + ok.Split("-")[0] + "\n" + "M " + ok.Split("-")[1],
-                                VerticalAlignment = VerticalAlignment.Center,
-                                HorizontalAlignment = HorizontalAlignment.Center
-                            });
-                            item.macroUCViewModels[i].WayLotMacro.Children.Add(g1);
-                            
+                                Grid g1 = new Grid();
+                                g1.Children.Add(new Ellipse()
+                                {
+                                    Stroke = Brushes.Red,
+                                    StrokeThickness = 3,
+                                    Width = 50,
+                                    Height = 50,
+                                    Visibility = Visibility.Visible
+                                });
+                                g1.Children.Add(new TextBlock()
+                                {
+                                    Text = "L " + ok.Split("-")[0] + "\n" + "M " + ok.Split("-")[1],
+                                    VerticalAlignment = VerticalAlignment.Center,
+                                    HorizontalAlignment = HorizontalAlignment.Center
+                                });
+                                item.macroUCViewModels[i].WayLotMacro.Children.Add(g1);
+
+                            }
                         }
+                        
                     }
                     else
                     {
                         item.macroUCViewModels[i].WayLotMacro.Children.Clear();
-                        if (int.Parse(ok.Split("-")[0]) == 0)
+                        if (ok.Equals("0"))
                         {
 
                         }
@@ -167,7 +171,7 @@ namespace Studio.Commands
                                 item.macroUCViewModels[i].WayLotMacro.Children.Add(g);
                             }
                         }
-                        if (int.Parse(ko.Split("-")[0]) == 0)
+                        if (ko.Equals("0"))
                         {
 
                         }

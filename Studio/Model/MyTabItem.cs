@@ -1,9 +1,11 @@
 ﻿using Studio.ViewModel;
+using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
@@ -11,6 +13,7 @@ namespace Studio.Model
 {
     public class MyTabItem : TabItem
     {
+        public TextBox textBox { get; set; }
         public ItemsControl itemsControl { get; set; }
         public Canvas canvas { get; set; }
         public ScrollViewer scrollViewer { get; set; }
@@ -25,6 +28,16 @@ namespace Studio.Model
             this.scrollViewer = scrollViewer;
             this.macroUCViewModels = macroUCViewModels;
 
+            textBox = new TextBox()
+            {
+                BorderBrush = Brushes.Transparent,
+                Focusable = false,
+            };
+            textBox.MouseDoubleClick += EditTabItem;
+            textBox.LostFocus += ChangeFocusable;
+            this.Header = textBox;
+            
+            
             canvas.Width = double.MaxValue;
             canvas.Height = double.MaxValue;
             scrollViewer.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
@@ -36,6 +49,17 @@ namespace Studio.Model
 
             scrollViewer.Content = canvas;
             this.Content = scrollViewer;
+        }
+
+        private void ChangeFocusable(object sender, RoutedEventArgs e)
+        {
+            textBox.Focusable = false;
+        }
+
+        private void EditTabItem(object sender, MouseButtonEventArgs e)
+        {
+            textBox.Focusable = true;
+            textBox.Focus();
         }
 
         public void CleanLines()

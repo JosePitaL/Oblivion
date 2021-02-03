@@ -29,7 +29,18 @@
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <TextBox Text="{Binding Index}" Background="White" BorderThickness="0" HorizontalContentAlignment="Center" Grid.Column="0"/>
-                            <Button Content="{Binding Macro.nombre}" Grid.Column="1" Background="White" BorderThickness="0" Width="290" HorizontalContentAlignment="Left" Command="{Binding SelectedMacroCommand}" />
+                            <Button  Grid.Column="1" Background="White" BorderThickness="0" Width="290" HorizontalContentAlignment="Left" Command="{Binding SelectedMacroCommand}" >
+                                <TextBox Text="{Binding Macro.nombre}" Focusable="{Binding FocusableNameMacro}" BorderBrush="Transparent">
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="MouseDoubleClick">
+                                            <i:InvokeCommandAction Command="{Binding EditNameMacroCommand}"/>
+                                        </i:EventTrigger>
+                                        <i:EventTrigger EventName="LostFocus">
+                                            <i:InvokeCommandAction Command="{Binding LostFocusNameMacroCommand}"/>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                </TextBox>
+                            </Button>
                             <Button FontFamily="Segoe MDL2 Assets" Content="&#xE711;" Grid.Column="2" BorderThickness="0" Background="White" Margin="0,0,5,0" Command="{Binding DeleteMacroCommand}"/>
                         </Grid>
                         <Separator Grid.Row="1" />

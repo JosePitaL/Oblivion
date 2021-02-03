@@ -19,6 +19,8 @@ namespace Studio.ViewModel
         public ICommand SelectedMacroCommand { get; set; }
         public ICommand DeleteMacroCommand { get; set; }
         public ICommand LostFocusCaminoCommand { get; set; }
+        public ICommand EditNameMacroCommand { get; set; }
+        public ICommand LostFocusNameMacroCommand { get; set; }
 
         private MainWindowViewModel _mainWindowViewModel = null;
         public MainWindowViewModel mainWindowViewModel
@@ -163,11 +165,22 @@ namespace Studio.ViewModel
                 }
             }
         }
-        
+
+        private bool _focusableNameMacro;
+        public bool FocusableNameMacro
+        {
+            get { return _focusableNameMacro; }
+            set
+            {
+                _focusableNameMacro = value;
+                OnPropertyChanged(nameof(FocusableNameMacro));
+            }
+        }
 
 
         public MacroUCViewModel(MainWindowViewModel mainWindowViewModel)
         {
+            FocusableNameMacro = false;
             WayLotMacro = new StackPanel();
             MacroHeigth = 150;
             MacroWidth = 300;
@@ -187,7 +200,9 @@ namespace Studio.ViewModel
             Borde = Brushes.Black;
             SelectedMacroCommand = new SelectedMacroCommand(this);
             DeleteMacroCommand = new DeleteMacroCommand(this);
+            EditNameMacroCommand = new EditNameMacroCommand(this);
             LostFocusCaminoCommand = new LostFocusCaminoCommand(this);
+            LostFocusNameMacroCommand = new LostFocusNameMacroCommand(this);
         }
     }
 }

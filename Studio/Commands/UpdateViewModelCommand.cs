@@ -1,4 +1,5 @@
 ﻿using Studio.Model;
+using Studio.Servicios;
 using Studio.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -38,7 +39,57 @@ namespace Studio.Commands
                         {
                             item1.MacroHeigth += 30;
                         }
-                        item1.accionForms.Add(new AccionesUCViewModel(viewModel));
+                        Reproductor.Comandos.Comando comando;
+                        switch (parameter.ToString())
+                        {
+                            case "IMAGEN":
+                                comando = Reproductor.Comandos.Comando.IMAGEN;
+                                break;
+                            case "IMAGENMOVE":
+                                comando = Reproductor.Comandos.Comando.IMAGENMOVE;
+                                break;
+                            case "IMAGENCLICK":
+                                comando = Reproductor.Comandos.Comando.IMAGENCLICK;
+                                break;
+                            case "MOVER":
+                                comando = Reproductor.Comandos.Comando.MOVER;
+                                break;
+                            case "CLICK":
+                                comando = Reproductor.Comandos.Comando.CLICK;
+                                break;
+                            case "ESCRIBIR":
+                                comando = Reproductor.Comandos.Comando.ESCRIBIR;
+                                break;
+                            case "GHASH":
+                                comando = Reproductor.Comandos.Comando.GHASH;
+                                break;
+                            case "LHASH":
+                                comando = Reproductor.Comandos.Comando.LHASH; 
+                                break;
+                            case "LISTA":
+                                comando = Reproductor.Comandos.Comando.LISTA;
+                                break;
+                            case "BUSCARLISTA":
+                                comando = Reproductor.Comandos.Comando.BUSCARLISTA; 
+                                break;
+                            case "ANADIRLISTA":
+                                comando = Reproductor.Comandos.Comando.ANADIRLISTA; 
+                                break;
+                            case "ELIMINARLISTA":
+                                comando = Reproductor.Comandos.Comando.ELIMINARLISTA; 
+                                break;
+                            default:
+                                comando = Reproductor.Comandos.Comando.IMAGEN;
+                                break;
+                        }
+                        item1.accionForms.Add(new AccionesUCViewModel(viewModel)
+                        {
+                            Accion = new Accion()
+                            {
+                                Comando = comando
+                            }
+                        });
+                        viewModel.Automatismo.Lotes[viewModel.SelectedItem].Macros[int.Parse(item1.Index)].Acciones.Add(item1.accionForms[item1.accionForms.Count - 1].Accion);
                     }
                 }
             }

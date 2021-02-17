@@ -1,13 +1,10 @@
 ﻿using Studio.Model;
+using Studio.Servicios;
 using Studio.ViewModel;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 using System.Windows.Input;
-using System.Windows.Media;
 
 namespace Studio.Commands
 {
@@ -29,8 +26,9 @@ namespace Studio.Commands
 
         public void Execute(object parameter)
         {
-            MyTabItem tab = new MyTabItem(new ItemsControl(), new Canvas(), new ScrollViewer(), new ObservableCollection<MacroUCViewModel>());
+            MyTabItem tab = new MyTabItem(new ItemsControl(), new Canvas(), new ScrollViewer(), new ObservableCollection<MacroUCViewModel>(),viewModel);
             viewModel.NewTabItem.Add(tab);
+            Fichero.GenerateTree(viewModel.Automatismo, viewModel);
         }
     }
 }

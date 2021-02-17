@@ -19,9 +19,11 @@ namespace Studio.Model
         public ScrollViewer scrollViewer { get; set; }
         public ObservableCollection<MacroUCViewModel> macroUCViewModels { get; set; }
         public Lote lote { get; set; }
+        public MainWindowViewModel Main { get; set; }
 
-        public MyTabItem(ItemsControl itemsControl, Canvas canvas, ScrollViewer scrollViewer, ObservableCollection<MacroUCViewModel> macroUCViewModels) : base()
+        public MyTabItem(ItemsControl itemsControl, Canvas canvas, ScrollViewer scrollViewer, ObservableCollection<MacroUCViewModel> macroUCViewModels, MainWindowViewModel Main) : base()
         {
+            this.Main = Main;
             this.itemsControl = itemsControl;
             this.canvas = canvas;
 
@@ -36,8 +38,13 @@ namespace Studio.Model
             textBox.MouseDoubleClick += EditTabItem;
             textBox.LostFocus += ChangeFocusable;
             this.Header = textBox;
-            
-            
+
+            lote = new Lote()
+            {
+                Nombre = textBox.Text,
+                Macros = new System.Collections.Generic.List<Macro>()
+            };
+            Main.Automatismo.Lotes.Add(lote);
             canvas.Width = double.MaxValue;
             canvas.Height = double.MaxValue;
             scrollViewer.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;

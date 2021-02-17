@@ -1,4 +1,5 @@
-﻿using Studio.ViewModel;
+﻿using Studio.Servicios;
+using Studio.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -31,6 +32,7 @@ namespace Studio.Commands
                 {
                     int p = int.Parse(parameter.ToString());
                     viewmodel.NewTabItem[p].macroUCViewModels.Add(new MacroUCViewModel(viewmodel));
+                    
 
                 }
                 catch (Exception)

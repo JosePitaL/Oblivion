@@ -49,8 +49,9 @@ namespace Studio.Servicios
             }
         }
 
-        public void GenerateTree(Automatismo auto, MainWindowViewModel Main)
+        public static void GenerateTree(Automatismo auto, MainWindowViewModel Main)
         {
+            Main.Automata.Clear();
             foreach (var Lote in auto.Lotes)
             {
 

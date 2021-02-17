@@ -35,7 +35,7 @@ namespace Studio.Commands
             fichero.Path = fichero.OpenFile();
             
             Automatismo auto = fichero.OpenRobot();
-            fichero.GenerateTree(auto, Main);
+            Fichero.GenerateTree(auto, Main);
 
             Main.Automatismo = auto;
 
@@ -43,7 +43,7 @@ namespace Studio.Commands
             foreach (var item in Main.Automatismo.Lotes)
             {
                 int i = 0;
-                MyTabItem tabItem = new MyTabItem(new ItemsControl(), new Canvas(), new ScrollViewer(), new ObservableCollection<MacroUCViewModel>())
+                MyTabItem tabItem = new MyTabItem(new ItemsControl(), new Canvas(), new ScrollViewer(), new ObservableCollection<MacroUCViewModel>(),Main)
                 {
                     lote = item,
                 };

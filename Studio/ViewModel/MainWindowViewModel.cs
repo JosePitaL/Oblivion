@@ -102,6 +102,10 @@ namespace Studio.ViewModel
 
         public MainWindowViewModel()
         {
+            Automatismo = new Automatismo()
+            {
+                Lotes = new List<Lote>()
+            };
             MainWindowState = WindowState.Maximized;
             Automata = new ObservableCollection<MyTreeViewAutomatismo>();
             UpdateViewModelCommand = new UpdateViewModelCommand(this);

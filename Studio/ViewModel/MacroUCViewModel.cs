@@ -186,12 +186,15 @@ namespace Studio.ViewModel
             MacroWidth = 300;
             Macro = new Macro()
             {
+                Acciones = new List<Accion>(),
                 camino = new Camino()
                 {
                     Ok = "0",
-                    Ko = "0"
+                    Ko = "0",
+                    Tiempo = "0"
                 }
             };
+            mainWindowViewModel.Automatismo.Lotes[mainWindowViewModel.SelectedItem].Macros.Add(Macro);
             CanvasLeft =0;
             CanvasTop = 150;
             Index = (mainWindowViewModel.NewTabItem[mainWindowViewModel.SelectedItem].macroUCViewModels.Count).ToString();

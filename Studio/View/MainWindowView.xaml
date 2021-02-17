@@ -96,20 +96,20 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
-                        <Button Content="Buscar Imagen" Grid.Row="0" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="BuscarImagen"/>
-                        <Button Content="Buscar/Mover Imagen" Grid.Row="1" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="BuscarMoverImagen"/>
-                        <Button Content="Buscar/Clickar Imagen" Grid.Row="2" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="ImagenClick"/>
-                        <Button Content="Mover Ratón" Grid.Row="3" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="MoverRaton"/>
-                        <Button Content="Clickar Ratón" Grid.Row="4" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="ClickarRaton"/>
+                        <Button Content="Buscar Imagen" Grid.Row="0" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="IMAGEN"/>
+                        <Button Content="Buscar/Mover Imagen" Grid.Row="1" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="IMAGENMOVE"/>
+                        <Button Content="Buscar/Clickar Imagen" Grid.Row="2" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="IMAGENcLICK"/>
+                        <Button Content="Mover Ratón" Grid.Row="3" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="MOVER"/>
+                        <Button Content="Clickar Ratón" Grid.Row="4" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="CLICK"/>
                         <Button Content="Copiar" Grid.Row="5" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent"/>
                         <Button Content="Pegar" Grid.Row="6" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent"/>
-                        <Button Content="Escribir" Grid.Row="7" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="Escribir"/>
-                        <Button Content="Guardar Hash" Grid.Row="8" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="GuardarHash"/>
-                        <Button Content="Leer Hash" Grid.Row="9" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="LeerHash"/>
-                        <Button Content="Crear Lista" Grid.Row="10" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="CrearLista"/>
-                        <Button Content="Añadir a una Lista" Grid.Row="11" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="AñadirenLista" />
-                        <Button Content="Buscar en una Lista" Grid.Row="12" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="BuscarenLista"/>
-                        <Button Content="Eliminar Lista" Grid.Row="13" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="EliminarenLista" />
+                        <Button Content="Escribir" Grid.Row="7" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="ESCRIBIR"/>
+                        <Button Content="Guardar Hash" Grid.Row="8" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="GHASH"/>
+                        <Button Content="Leer Hash" Grid.Row="9" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="LHASH"/>
+                        <Button Content="Crear Lista" Grid.Row="10" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="LISTA"/>
+                        <Button Content="Añadir a una Lista" Grid.Row="11" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="ANADIRLISTA" />
+                        <Button Content="Buscar en una Lista" Grid.Row="12" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="BUSCARLISTA"/>
+                        <Button Content="Eliminar Lista" Grid.Row="13" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" Command="{Binding UpdateViewModelCommand}" CommandParameter="ELIMINARLISTA" />
                         <Button Content="Pulsar" Grid.Row="14" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent"/>
                         <Button Content="Reemplazar" Grid.Row="15" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent"/>
                         <Button Content="Evaluar" Grid.Row="16" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent"/>

@@ -24,13 +24,13 @@ namespace Studio.Commands
 
         public void Execute(object parameter)
         {
-            foreach (var item in macroUCViewModel.mainWindowViewModel.NewTabItem)
+            foreach (var item in macroUCViewModel.mainWindowViewModel.ItemLote)
             {
-                foreach (var item1 in item.macroUCViewModels)
+                foreach (var item1 in item.ListMacro)
                 {
                     if(item1.Borde == Brushes.Red)
                     {
-                        item.macroUCViewModels.Remove(item1);
+                        item.ListMacro.Remove(item1);
                         break;
                     }
                 }

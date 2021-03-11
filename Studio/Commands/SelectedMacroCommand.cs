@@ -29,9 +29,9 @@ namespace Studio.Commands
             }
             else
             {
-                foreach (var item in macroUCViewModel.mainWindowViewModel.NewTabItem)
+                foreach (var item in macroUCViewModel.mainWindowViewModel.ItemLote)
                 {
-                    foreach (var item1 in item.macroUCViewModels)
+                    foreach (var item1 in item.ListMacro)
                     {
                         item1.Borde = Brushes.Black;
                     }

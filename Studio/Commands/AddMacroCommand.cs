@@ -31,7 +31,7 @@ namespace Studio.Commands
                 try
                 {
                     int p = int.Parse(parameter.ToString());
-                    viewmodel.NewTabItem[p].macroUCViewModels.Add(new MacroUCViewModel(viewmodel));
+                    viewmodel.ItemLote[p].ListMacro.Add(new MacroUCViewModel(viewmodel));
                     
 
                 }

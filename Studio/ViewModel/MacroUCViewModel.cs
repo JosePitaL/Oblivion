@@ -76,7 +76,7 @@ namespace Studio.ViewModel
                 OnPropertyChanged(nameof(MacroWidth));
                 if (_mainWindowViewModel != null)
                 {
-                    mainWindowViewModel.NewTabItem[mainWindowViewModel.SelectedItem].CleanLines();
+                   // mainWindowViewModel.NewTabItem[mainWindowViewModel.SelectedItem].CleanLines();
                     mainWindowViewModel.PaintLinesCommand.Execute("");
                 }
             }
@@ -92,7 +92,7 @@ namespace Studio.ViewModel
                 OnPropertyChanged(nameof(MacroHeigth));
                 if (_mainWindowViewModel != null)
                 {
-                    mainWindowViewModel.NewTabItem[mainWindowViewModel.SelectedItem].CleanLines();
+                    //mainWindowViewModel.NewTabItem[mainWindowViewModel.SelectedItem].CleanLines();
                     mainWindowViewModel.PaintLinesCommand.Execute("");
                 }
             }
@@ -108,7 +108,7 @@ namespace Studio.ViewModel
                 OnPropertyChanged(nameof(CanvasLeft));
                 if (_mainWindowViewModel != null)
                 {
-                    mainWindowViewModel.NewTabItem[mainWindowViewModel.SelectedItem].CleanLines();
+                    //mainWindowViewModel.NewTabItem[mainWindowViewModel.SelectedItem].CleanLines();
                     mainWindowViewModel.PaintLinesCommand.Execute("");
                 }
             }
@@ -124,7 +124,7 @@ namespace Studio.ViewModel
                 OnPropertyChanged(nameof(CanvasTop));
                 if (_mainWindowViewModel != null)
                 {
-                    mainWindowViewModel.NewTabItem[mainWindowViewModel.SelectedItem].CleanLines();
+                    //mainWindowViewModel.NewTabItem[mainWindowViewModel.SelectedItem].CleanLines();
                     mainWindowViewModel.PaintLinesCommand.Execute("");
                 }
             }
@@ -178,28 +178,32 @@ namespace Studio.ViewModel
         }
 
 
-        public MacroUCViewModel(MainWindowViewModel mainWindowViewModel)
+        public MacroUCViewModel(MainWindowViewModel mainWindowViewModel, bool f=false)
         {
+            this.mainWindowViewModel = mainWindowViewModel;
             FocusableNameMacro = false;
             WayLotMacro = new StackPanel();
             MacroHeigth = 150;
             MacroWidth = 300;
-            Macro = new Macro()
+            if(f==false)
             {
-                Acciones = new List<Accion>(),
-                camino = new Camino()
+                Macro = new Macro()
                 {
-                    Ok = "0",
-                    Ko = "0",
-                    Tiempo = "0"
-                }
-            };
-            mainWindowViewModel.Automatismo.Lotes[mainWindowViewModel.SelectedItem].Macros.Add(Macro);
+                    Acciones = new List<Accion>(),
+                    camino = new Camino()
+                    {
+                        Ok = "0",
+                        Ko = "0",
+                        Tiempo = "0"
+                    }
+                };
+                mainWindowViewModel.Automatismo.Lotes[mainWindowViewModel.SelectedItem].Macros.Add(Macro);
+                Index = (mainWindowViewModel.ItemLote[mainWindowViewModel.SelectedItem].ListMacro.Count).ToString();
+            }
+            
             CanvasLeft =0;
             CanvasTop = 150;
-            Index = (mainWindowViewModel.NewTabItem[mainWindowViewModel.SelectedItem].macroUCViewModels.Count).ToString();
             accionForms = new ObservableCollection<AccionesUCViewModel>();
-            this.mainWindowViewModel = mainWindowViewModel;
             Borde = Brushes.Black;
             SelectedMacroCommand = new SelectedMacroCommand(this);
             DeleteMacroCommand = new DeleteMacroCommand(this);

@@ -1,4 +1,5 @@
-﻿using Studio.Commands;
+﻿using Reproductor;
+using Studio.Commands;
 using Studio.Model;
 using System;
 using System.Collections.Generic;
@@ -42,10 +43,19 @@ namespace Studio.ViewModel
 
 
 
-        public AccionesUCViewModel(MainWindowViewModel main)
+        public AccionesUCViewModel(MainWindowViewModel main, Comandos.Comando comando, string index, bool f=false)
         {
             ActionSeleted = Brushes.Transparent;
             this.main = main;
+            if(f== false)
+            {
+                Accion = new Accion()
+                {
+                    Comando = comando
+                };
+                main.Automatismo.Lotes[main.SelectedItem].Macros[int.Parse(index)].Acciones.Add(Accion);
+            }
+            
             SelectedActionCommand = new SelectedActionCommand(this, main);
             DeleteActionCommand = new DeleteActionCommand(this, main);
         }

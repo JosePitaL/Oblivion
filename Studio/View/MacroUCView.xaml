@@ -30,7 +30,7 @@
                             </Grid.ColumnDefinitions>
                             <TextBox Text="{Binding Index}" Background="White" BorderThickness="0" HorizontalContentAlignment="Center" Grid.Column="0"/>
                             <Button  Grid.Column="1" Background="White" BorderThickness="0" Width="290" HorizontalContentAlignment="Left" Command="{Binding SelectedMacroCommand}" >
-                                <TextBox Text="{Binding Macro.nombre}" Focusable="{Binding FocusableNameMacro}" BorderBrush="Transparent">
+                                <TextBox Text="{Binding Macro.nombre}" Focusable="{Binding FocusableNameMacro}" BorderThickness="0">
                                     <i:Interaction.Triggers>
                                         <i:EventTrigger EventName="MouseDoubleClick">
                                             <i:InvokeCommandAction Command="{Binding EditNameMacroCommand}"/>

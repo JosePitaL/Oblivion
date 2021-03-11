@@ -19,6 +19,7 @@ namespace Studio.ViewModel
         public ICommand AddMacroCommand { get; set; }
         public ICommand PaintLinesCommand { get; set; }
         public ICommand OpenFileCommand { get; set; }
+        public ICommand AddLoteCommand { get; set; }
 
         private Automatismo _automatismo;
         public Automatismo Automatismo
@@ -50,6 +51,17 @@ namespace Studio.ViewModel
             {
                 _newTabItem = value;
                 OnPropertyChanged(nameof(NewTabItem));
+            }
+        }
+
+        private ObservableCollection<LoteViewModel> _itemLote;
+        public ObservableCollection<LoteViewModel> ItemLote
+        {
+            get { return _itemLote; }
+            set
+            {
+                _itemLote = value;
+                OnPropertyChanged(nameof(ItemLote));
             }
         }
 
@@ -108,11 +120,13 @@ namespace Studio.ViewModel
             };
             MainWindowState = WindowState.Maximized;
             Automata = new ObservableCollection<MyTreeViewAutomatismo>();
+            ItemLote = new ObservableCollection<LoteViewModel>();
             UpdateViewModelCommand = new UpdateViewModelCommand(this);
             AddTabItemCommand = new AddTabItemCommand(this);
             AddMacroCommand = new AddMacroCommand(this);
             PaintLinesCommand = new PaintLinesCommand(this);
             OpenFileCommand = new OpenFileCommand(this);
+            AddLoteCommand = new AddLoteCommand(this);
             
         }
 

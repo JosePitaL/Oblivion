@@ -12,9 +12,9 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Grid  Grid.Row="0">
-            <DockPanel>
-                <Menu DockPanel.Dock="Top">
+        <Grid  Grid.Row="0" Margin="0,6,0,35" Grid.RowSpan="2">
+            <DockPanel Margin="0,3,0,-3">
+                <Menu DockPanel.Dock="Top" Height="100">
                     <MenuItem Header="Archivo">
                         <MenuItem Header="Nuevo"/>
                         <MenuItem Header="Abrir" Command="{Binding OpenFileCommand}"/>
@@ -33,7 +33,7 @@
                 </Grid.ColumnDefinitions>
                 <ToolBarTray Grid.Column="0">
                     <ToolBar HorizontalAlignment="Left" Width="168">
-                        <Button FontFamily="Segoe MDL2 Assets" FontSize="30" Content="&#xE81E;" Command="{Binding AddTabItemCommand}"/>
+                        <Button FontFamily="Segoe MDL2 Assets" FontSize="30" Content="&#xE81E;" Command="{Binding AddLoteCommand}"/>
                         <Button FontFamily="Segoe MDL2 Assets" FontSize="30" Content="&#xF407;" Command="{Binding AddMacroCommand}" CommandParameter="{Binding SelectedItem}"/>
                         <Button FontFamily="Segoe MDL2 Assets" FontSize="30" Content="&#xEB7E;" />
                         <Button FontFamily="Segoe MDL2 Assets" FontSize="30" Content="&#xEF90;" Command="{Binding PaintLinesCommand}" />
@@ -126,7 +126,15 @@
                         <RowDefinition Height="2*" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
-                    <TabControl Grid.Row="0" ItemsSource="{Binding NewTabItem}" SelectedIndex="{Binding SelectedItem}" />
+                    <TabControl Grid.Row="0" ItemsSource="{Binding ItemLote}" SelectedIndex="{Binding SelectedItem}" >
+                        <TabControl.ItemTemplate>
+                            <ItemContainerTemplate>
+                                <HeaderedContentControl>
+                                    <TextBox Text="{Binding Lote.Nombre}" BorderThickness="0"/>
+                                </HeaderedContentControl>
+                            </ItemContainerTemplate>
+                        </TabControl.ItemTemplate>
+                    </TabControl>
                     <TreeView Grid.Row="1" ItemsSource="{Binding Automata}" />
                 </Grid>
                 <Grid Grid.Column="2">

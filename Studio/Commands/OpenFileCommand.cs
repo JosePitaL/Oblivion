@@ -33,54 +33,40 @@ namespace Studio.Commands
 
             Fichero fichero = new Fichero();
             fichero.Path = fichero.OpenFile();
-            
-            Automatismo auto = fichero.OpenRobot();
-            Fichero.GenerateTree(auto, Main);
 
-            Main.Automatismo = auto;
+            Main.Automatismo= null;
+            Main.Automatismo = fichero.OpenRobot();
+            Fichero.GenerateTree(Main.Automatismo, Main);
 
-            
-            foreach (var item in Main.Automatismo.Lotes)
+            foreach (var lote in Main.Automatismo.Lotes)
             {
-                int i = 0;
-                MyTabItem tabItem = new MyTabItem(new ItemsControl(), new Canvas(), new ScrollViewer(), new ObservableCollection<MacroUCViewModel>(),Main)
+                LoteViewModel loteView = new LoteViewModel(Main, true)
                 {
-                    lote = item,
+                    Lote = lote
                 };
-                tabItem.Header = tabItem.lote.Nombre;
-                Main.NewTabItem.Add(tabItem);
-                double top = 0;
-                foreach (var item1 in item.Macros)
+                Main.ItemLote.Add(loteView);
+                foreach (var macro in lote.Macros)
                 {
-                    MacroUCViewModel macro = new MacroUCViewModel(Main);
-                    macro.Index = i.ToString();
-                    macro.Macro = item1;
-                    macro.accionForms = new ObservableCollection<AccionesUCViewModel>();
-                    macro.CanvasTop = top;
-                    tabItem.macroUCViewModels.Add(macro);
-
-                    foreach (var item2 in item1.Acciones)
+                    MacroUCViewModel macroUCView = new MacroUCViewModel(Main, true)
                     {
-                        if (macro.accionForms.Count > 3)
+                        Macro = macro,
+                        Index = (loteView.ListMacro.Count).ToString()
+                    };
+                    loteView.ListMacro.Add(macroUCView);
+                    foreach (var accion in macro.Acciones)
+                    {
+                        AccionesUCViewModel accionesUCView = new AccionesUCViewModel(Main, accion.Comando, macroUCView.Index, true)
                         {
-                            macro.MacroHeigth += 30;
-                        }
-                        AccionesUCViewModel acciones = new AccionesUCViewModel(Main)
-                        {
-                            Accion = item2
+                            Accion = accion
                         };
-                        macro.accionForms.Add(acciones);
+                        if(macroUCView.accionForms.Count > 3)
+                        {
+                            macroUCView.MacroHeigth += 30;
+                        }
+                        macroUCView.accionForms.Add(accionesUCView);
                     }
-                    top += macro.MacroHeigth + 50;
-                    i++;
                 }
             }
-
-            foreach (var item in Main.NewTabItem)
-            {
-                item.CleanLines();
-            }
-            Main.PaintLinesCommand.Execute("");
         }
     }
 }

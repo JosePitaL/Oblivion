@@ -29,9 +29,9 @@ namespace Studio.Commands
 
         public void Execute(object parameter)
         {
-            foreach (var item in viewModel.NewTabItem)
+            foreach (var item in viewModel.ItemLote)
             {
-                foreach (var item1 in item.macroUCViewModels)
+                foreach (var item1 in item.ListMacro)
                 {
                     if(item1.Borde == Brushes.Red)
                     {
@@ -82,14 +82,8 @@ namespace Studio.Commands
                                 comando = Reproductor.Comandos.Comando.IMAGEN;
                                 break;
                         }
-                        item1.accionForms.Add(new AccionesUCViewModel(viewModel)
-                        {
-                            Accion = new Accion()
-                            {
-                                Comando = comando
-                            }
-                        });
-                        viewModel.Automatismo.Lotes[viewModel.SelectedItem].Macros[int.Parse(item1.Index)].Acciones.Add(item1.accionForms[item1.accionForms.Count - 1].Accion);
+                        item1.accionForms.Add(new AccionesUCViewModel(viewModel, comando, item1.Index));
+                        
                     }
                 }
             }

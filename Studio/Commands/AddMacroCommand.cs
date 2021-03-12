@@ -32,6 +32,7 @@ namespace Studio.Commands
                 {
                     int p = int.Parse(parameter.ToString());
                     viewmodel.ItemLote[p].ListMacro.Add(new MacroUCViewModel(viewmodel));
+                    Fichero.GenerateTree(viewmodel.Automatismo, viewmodel);
                     
 
                 }

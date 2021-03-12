@@ -130,7 +130,14 @@
                         <TabControl.ItemTemplate>
                             <ItemContainerTemplate>
                                 <HeaderedContentControl>
-                                    <TextBox Text="{Binding Lote.Nombre}" BorderThickness="0"/>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="12" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBox Grid.Column="0" Text="{Binding Lote.Nombre}" BorderThickness="0"/>
+                                        <Button Grid.Column="1" FontFamily="Segoe MDL2 Assets" Content="&#xE711;" BorderThickness="0" Background="White" HorizontalAlignment="Right" Command="{Binding DeleteLoteCommand}"/>
+                                    </Grid>
                                 </HeaderedContentControl>
                             </ItemContainerTemplate>
                         </TabControl.ItemTemplate>

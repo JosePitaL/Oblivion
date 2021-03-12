@@ -24,21 +24,23 @@ namespace Studio.Commands
 
         public void Execute(object parameter)
         {
-            foreach (var item in macroUCViewModel.mainWindowViewModel.ItemLote)
+            for (int i = 0; i < macroUCViewModel.mainWindowViewModel.ItemLote.Count; i++)
             {
-                foreach (var item1 in item.ListMacro)
+                for (int e = 0; e < macroUCViewModel.mainWindowViewModel.ItemLote[i].ListMacro.Count; e++)
                 {
-                    if(item1.Borde == Brushes.Red)
+                    if (macroUCViewModel.mainWindowViewModel.ItemLote[i].ListMacro[e].Borde == Brushes.Red)
                     {
-                        item.ListMacro.Remove(item1);
+                        macroUCViewModel.mainWindowViewModel.ItemLote[i].ListMacro.Remove(macroUCViewModel.mainWindowViewModel.ItemLote[i].ListMacro[e]);
+                        macroUCViewModel.mainWindowViewModel.Automatismo.Lotes[i].Macros.Remove(macroUCViewModel.mainWindowViewModel.Automatismo.Lotes[i].Macros[e]);
                         break;
                     }
                 }
             }
-            foreach (var item in macroUCViewModel.mainWindowViewModel.NewTabItem)
+
+            foreach (var item in macroUCViewModel.mainWindowViewModel.ItemLote)
             {
                 int i = 0;
-                foreach (var item1 in item.macroUCViewModels)
+                foreach (var item1 in item.ListMacro)
                 {
                     item1.Index = i.ToString();
                     i++;

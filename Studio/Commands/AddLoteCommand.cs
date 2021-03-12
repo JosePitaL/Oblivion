@@ -1,4 +1,5 @@
-﻿using Studio.ViewModel;
+﻿using Studio.Servicios;
+using Studio.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -24,6 +25,7 @@ namespace Studio.Commands
         {
             LoteViewModel lote = new LoteViewModel(main);
             main.ItemLote.Add(lote);
+            Fichero.GenerateTree(main.Automatismo, main);
         }
     }
 }

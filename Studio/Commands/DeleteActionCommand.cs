@@ -27,15 +27,17 @@ namespace Studio.Commands
 
         public void Execute(object parameter)
         {
-            foreach (var item in viewModel.NewTabItem)
+            
+            for (int i = 0; i < viewModel.ItemLote.Count; i++)
             {
-                foreach (var item1 in item.macroUCViewModels)
+                for (int e = 0; e < viewModel.ItemLote[i].ListMacro.Count; e++)
                 {
-                    foreach (var item2 in item1.accionForms)
+                    for (int u = 0; u < viewModel.ItemLote[i].ListMacro[e].accionForms.Count; u++)
                     {
-                        if(item2.ActionSeleted == Brushes.SkyBlue)
+                        if (viewModel.ItemLote[i].ListMacro[e].accionForms[u].ActionSeleted == Brushes.SkyBlue)
                         {
-                            item1.accionForms.Remove(item2);
+                            viewModel.ItemLote[i].ListMacro[e].accionForms.Remove(viewModel.ItemLote[i].ListMacro[e].accionForms[u]); ;
+                            viewModel.Automatismo.Lotes[i].Macros[e].Acciones.Remove(viewModel.Automatismo.Lotes[i].Macros[e].Acciones[u]);
                             return;
                         }
                     }

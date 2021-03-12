@@ -83,6 +83,7 @@ namespace Studio.Commands
                                 break;
                         }
                         item1.accionForms.Add(new AccionesUCViewModel(viewModel, comando, item1.Index));
+                        Fichero.GenerateTree(viewModel.Automatismo, viewModel);
                         
                     }
                 }

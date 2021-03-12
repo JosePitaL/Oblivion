@@ -1,16 +1,19 @@
-﻿using Studio.Model;
+﻿using Studio.Commands;
+using Studio.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Windows.Input;
 
 namespace Studio.ViewModel
 {
     public class LoteViewModel : BaseViewModel
     {
         public MainWindowViewModel main { get; set; }
+        public ICommand DeleteLoteCommand { get; set; }
 
-        
+
         public LoteViewModel(MainWindowViewModel main, bool f=false)
         {
             this.main = main;
@@ -23,6 +26,7 @@ namespace Studio.ViewModel
                 };
                 main.Automatismo.Lotes.Add(Lote);
             }
+            DeleteLoteCommand = new DeleteLoteCommand(main);
             
         }
 

@@ -20,6 +20,7 @@ namespace Studio.ViewModel
         public ICommand PaintLinesCommand { get; set; }
         public ICommand OpenFileCommand { get; set; }
         public ICommand AddLoteCommand { get; set; }
+       
 
         private Automatismo _automatismo;
         public Automatismo Automatismo
@@ -127,6 +128,7 @@ namespace Studio.ViewModel
             PaintLinesCommand = new PaintLinesCommand(this);
             OpenFileCommand = new OpenFileCommand(this);
             AddLoteCommand = new AddLoteCommand(this);
+            
             
         }
 
